@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- =====================================================
+         AVM PET SHOP
+         TRANG SẢN PHẨM THÚ Y
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Danh mục sản phẩm thuốc thú y, dinh dưỡng bổ sung và giải pháp chăm sóc vật nuôi của AVM."
+    >
+
+    <meta
+        name="keywords"
+        content="thuốc thú y, sản phẩm thú y, dinh dưỡng vật nuôi, AVM Pet Shop"
+    >
+
+    <meta name="theme-color" content="#020817">
+
+    <title>Sản phẩm thú y | AVM Pet Shop</title>
+
+
+    <!-- =====================================================
+         FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="./css/style.css"
+    >
+
+
+    <!-- =====================================================
+         KIỂM TRA ĐĂNG NHẬP
+    ====================================================== -->
+
+    <script
+        type="module"
+        src="./js/auth-guard.js"
+    ></script>
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header
+        class="header"
+        id="header"
+    >
+
+        <div class="container header-container">
+
+            <!-- LOGO -->
+
+            <a
+                href="./index.html"
+                class="logo"
+                aria-label="AVM Pet Shop"
+            >
+                <span class="logo-avm">
+                    AVM
+                </span>
+
+                <span class="logo-name">
+                    PET SHOP
+                </span>
+            </a>
+
+
+            <!-- MENU MOBILE -->
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Mở menu điều hướng"
+                aria-expanded="false"
+                aria-controls="navbar"
+            >
+                ☰
+            </button>
+
+
+            <!-- NAVBAR -->
+
+            <nav
+    class="navbar"
+    id="navbar"
+    aria-label="Điều hướng chính"
+>
+    <a
+        href="./index.html"
+        class="nav-link active"
+        aria-current="page"
+    >
+        Trang chủ
+    </a>
+
+    <a
+        href="./products.html"
+        class="nav-link"
+    >
+        Sản phẩm
+    </a>
+
+    <a
+        href="./api.html"
+        class="nav-link"
+    >
+        API Demo
+    </a>
+
+    <a
+        href="./support.html"
+        class="nav-link"
+    >
+        Pet Support
+    </a>
+
+    <a
+        href="./contact.html"
+        class="nav-link"
+    >
+        Liên hệ
+    </a>
+
+    <a
+        href="./admin.html"
+        class="nav-link admin-only-link hidden"
+        id="adminPageLink"
+    >
+        Quản trị
+    </a>
+
+    <div
+        class="user-menu hidden"
+        id="userMenu"
+    >
+        <span
+            class="user-name"
+            id="userName"
+        >
+            Thành viên AVM
+        </span>
+
+        <button
+            type="button"
+            class="logout-button"
+            id="logoutButton"
+        >
+            Đăng xuất
+        </button>
+    </div>
+</nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+        <!-- =================================================
+             HERO SẢN PHẨM
+        ================================================== -->
+
+        <section class="page-hero products-page-hero">
+
+            <div class="container page-hero-container">
+
+                <!-- NỘI DUNG -->
+
+                <div class="page-hero-content">
+
+                    <p class="section-label">
+                        AVM VETERINARY PRODUCTS
+                    </p>
+
+
+                    <h1>
+                        Giải pháp chăm sóc và điều trị thú y
+                    </h1>
+
+
+                    <p>
+                        Khám phá các nhóm sản phẩm hỗ trợ sức khỏe,
+                        dinh dưỡng, tiêu hóa, miễn dịch và xử lý môi trường
+                        dành cho chó, mèo, gia cầm, heo và thủy sản.
+                    </p>
+
+
+                    <div class="page-hero-actions">
+
+                        <a
+                            href="#productSection"
+                            class="button button-primary"
+                        >
+                            Khám phá sản phẩm
+
+                            <span aria-hidden="true">
+                                ↓
+                            </span>
+                        </a>
+
+
+                        <a
+                            href="./support.html"
+                            class="button button-outline"
+                        >
+                            Nhận tư vấn
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MINH HỌA -->
+
+                <div
+                    class="products-hero-visual"
+                    aria-hidden="true"
+                >
+
+                    <div class="product-orbit product-orbit-one"></div>
+
+                    <div class="product-orbit product-orbit-two"></div>
+
+
+                    <div class="medical-symbol">
+
+                        <span class="medical-symbol-main">
+                            ✚
+                        </span>
+
+
+                        <span class="medical-symbol-item symbol-dog">
+                            VET
+                        </span>
+
+
+                        <span class="medical-symbol-item symbol-cat">
+                            CARE
+                        </span>
+
+
+                        <span class="medical-symbol-item symbol-shield">
+                            ◇
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DANH MỤC NHANH
+        ================================================== -->
+
+        <section class="product-category-section">
+
+            <div class="container">
+
+                <div
+                    class="product-category-tabs"
+                    id="categoryTabs"
+                    aria-label="Lọc theo danh mục"
+                >
+
+                    <button
+                        class="product-category-button active"
+                        type="button"
+                        data-category="all"
+                    >
+                        <span aria-hidden="true">
+                            ◈
+                        </span>
+
+                        Tất cả
+                    </button>
+
+
+                    <button
+                        class="product-category-button"
+                        type="button"
+                        data-category="medicine"
+                    >
+                        <span aria-hidden="true">
+                            ✚
+                        </span>
+
+                        Thuốc thú y
+                    </button>
+
+
+                    <button
+                        class="product-category-button"
+                        type="button"
+                        data-category="nutrition"
+                    >
+                        <span aria-hidden="true">
+                            ◇
+                        </span>
+
+                        Dinh dưỡng
+                    </button>
+
+
+                    <button
+                        class="product-category-button"
+                        type="button"
+                        data-category="digestive"
+                    >
+                        <span aria-hidden="true">
+                            ⌁
+                        </span>
+
+                        Tiêu hóa
+                    </button>
+
+
+                    <button
+                        class="product-category-button"
+                        type="button"
+                        data-category="environment"
+                    >
+                        <span aria-hidden="true">
+                            ◉
+                        </span>
+
+                        Môi trường
+                    </button>
+
+
+                    <button
+                        class="product-category-button"
+                        type="button"
+                        data-category="accessory"
+                    >
+                        <span aria-hidden="true">
+                            □
+                        </span>
+
+                        Phụ kiện
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DANH SÁCH SẢN PHẨM
+        ================================================== -->
+
+        <section
+            class="section products-list-section"
+            id="productSection"
+        >
+
+            <div class="container">
+
+                <!-- HEADER -->
+
+                <div class="products-section-header">
+
+                    <div>
+
+                        <p class="section-label">
+                            DANH MỤC SẢN PHẨM
+                        </p>
+
+
+                        <h2 class="section-title">
+                            Lựa chọn giải pháp phù hợp
+                        </h2>
+
+
+                        <p class="section-description">
+                            Dữ liệu sản phẩm được tải tự động
+                            và hiển thị bằng JavaScript.
+                        </p>
+
+                    </div>
+
+
+                    <div class="product-result-count">
+
+                        <span>
+                            Đang hiển thị
+                        </span>
+
+                        <strong id="productCount">
+                            0 sản phẩm
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- THANH CÔNG CỤ -->
+
+                <div class="product-toolbar">
+
+                    <!-- TÌM KIẾM -->
+
+                    <div class="product-search">
+
+                        <label
+                            for="productSearch"
+                            class="sr-only"
+                        >
+                            Tìm kiếm sản phẩm
+                        </label>
+
+
+                        <span
+                            class="product-search-icon"
+                            aria-hidden="true"
+                        >
+                            ⌕
+                        </span>
+
+
+                        <input
+                            type="search"
+                            id="productSearch"
+                            placeholder="Tìm theo tên hoặc công dụng..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <!-- BỘ LỌC -->
+
+                    <div class="product-filter-group">
+
+                        <label
+                            for="animalFilter"
+                            class="sr-only"
+                        >
+                            Lọc theo vật nuôi
+                        </label>
+
+
+                        <select id="animalFilter">
+
+                            <option value="all">
+                                Tất cả vật nuôi
+                            </option>
+
+                            <option value="dog">
+                                Chó
+                            </option>
+
+                            <option value="cat">
+                                Mèo
+                            </option>
+
+                            <option value="poultry">
+                                Gia cầm
+                            </option>
+
+                            <option value="pig">
+                                Heo
+                            </option>
+
+                            <option value="aquaculture">
+                                Thủy sản
+                            </option>
+
+                        </select>
+
+
+                        <label
+                            for="productSort"
+                            class="sr-only"
+                        >
+                            Sắp xếp sản phẩm
+                        </label>
+
+
+                        <select id="productSort">
+
+                            <option value="default">
+                                Sắp xếp mặc định
+                            </option>
+
+                            <option value="name-asc">
+                                Tên A đến Z
+                            </option>
+
+                            <option value="name-desc">
+                                Tên Z đến A
+                            </option>
+
+                            <option value="price-asc">
+                                Giá thấp đến cao
+                            </option>
+
+                            <option value="price-desc">
+                                Giá cao đến thấp
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOADING -->
+
+                <div
+                    class="product-loading"
+                    id="productLoading"
+                >
+
+                    <div class="loading-ring"></div>
+
+                    <p>
+                        Đang tải dữ liệu sản phẩm...
+                    </p>
+
+                </div>
+
+
+                <!-- ERROR -->
+
+                <div
+                    class="product-error hidden"
+                    id="productError"
+                >
+
+                    <span aria-hidden="true">
+                        !
+                    </span>
+
+
+                    <div>
+
+                        <h3>
+                            Không thể tải dữ liệu
+                        </h3>
+
+                        <p>
+                            Vui lòng kiểm tra kết nối hoặc thử lại.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="retryProductsButton"
+                        class="button button-outline"
+                    >
+                        Thử lại
+                    </button>
+
+                </div>
+
+
+                <!-- PRODUCTS GRID -->
+
+                <div
+                    class="products-grid"
+                    id="productsGrid"
+                    aria-live="polite"
+                ></div>
+
+
+                <!-- EMPTY -->
+
+                <div
+                    class="product-empty hidden"
+                    id="productEmpty"
+                >
+
+                    <div class="product-empty-icon">
+                        ⌕
+                    </div>
+
+
+                    <h3>
+                        Không tìm thấy sản phẩm
+                    </h3>
+
+
+                    <p>
+                        Hãy thử thay đổi từ khóa hoặc bộ lọc.
+                    </p>
+
+
+                    <button
+                        type="button"
+                        id="resetFilterButton"
+                        class="button button-primary"
+                    >
+                        Xóa bộ lọc
+                    </button>
+
+                </div>
+
+
+                <!-- PHÂN TRANG -->
+
+                <div
+                    class="product-pagination"
+                    id="productPagination"
+                >
+
+                    <button
+                        type="button"
+                        id="previousPageButton"
+                        aria-label="Trang trước"
+                        disabled
+                    >
+                        ←
+                    </button>
+
+
+                    <div
+                        class="pagination-pages"
+                        id="paginationPages"
+                    ></div>
+
+
+                    <button
+                        type="button"
+                        id="nextPageButton"
+                        aria-label="Trang tiếp theo"
+                    >
+                        →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CAM KẾT
+        ================================================== -->
+
+        <section class="product-trust-section">
+
+            <div class="container product-trust-grid">
+
+                <article class="product-trust-card">
+
+                    <span class="trust-card-icon">
+                        ✓
+                    </span>
+
+
+                    <div>
+
+                        <h3>
+                            Thông tin rõ ràng
+                        </h3>
+
+                        <p>
+                            Công dụng, đối tượng sử dụng
+                            và trạng thái sản phẩm được trình bày rõ ràng.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="product-trust-card">
+
+                    <span class="trust-card-icon">
+                        ◇
+                    </span>
+
+
+                    <div>
+
+                        <h3>
+                            Danh mục khoa học
+                        </h3>
+
+                        <p>
+                            Sản phẩm được phân nhóm theo công dụng
+                            và đối tượng vật nuôi.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="product-trust-card">
+
+                    <span class="trust-card-icon">
+                        ◉
+                    </span>
+
+
+                    <div>
+
+                        <h3>
+                            Hỗ trợ lựa chọn
+                        </h3>
+
+                        <p>
+                            Pet Support giúp người dùng tìm hiểu
+                            nhóm sản phẩm phù hợp hơn.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CTA
+        ================================================== -->
+
+        <section class="cta-section">
+
+            <div class="container cta-container">
+
+                <div>
+
+                    <p class="section-label">
+                        AVM PET SUPPORT
+                    </p>
+
+
+                    <h2>
+                        Chưa biết lựa chọn sản phẩm nào?
+                    </h2>
+
+
+                    <p>
+                        Cung cấp thông tin về vật nuôi và nhu cầu sử dụng
+                        để nhận gợi ý nhóm sản phẩm phù hợp.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="./support.html"
+                    class="button button-primary"
+                >
+                    Nhận hỗ trợ
+
+                    <span aria-hidden="true">
+                        →
+                    </span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+                <a
+                    href="./index.html"
+                    class="logo"
+                >
+                    <span class="logo-avm">
+                        AVM
+                    </span>
+
+                    <span class="logo-name">
+                        PET SHOP
+                    </span>
+                </a>
+
+
+                <p>
+                    Nền tảng giới thiệu và quản lý sản phẩm
+                    chăm sóc, phòng ngừa và hỗ trợ điều trị thú y.
+                </p>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Điều hướng
+                </h3>
+
+
+                <a href="./index.html">
+                    Trang chủ
+                </a>
+
+                <a href="./products.html">
+                    Sản phẩm
+                </a>
+
+                <a href="./api.html">
+                    API Demo
+                </a>
+
+                <a href="./support.html">
+                    Pet Support
+                </a>
+
+            </div>
+
+
+            <!-- SYSTEM -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Hệ thống
+                </h3>
+
+
+                <a href="./admin.html">
+                    Quản trị
+                </a>
+
+                <a href="./contact.html">
+                    Liên hệ
+                </a>
+
+                <a href="./login.html">
+                    Đăng nhập
+                </a>
+
+                <a href="./register.html">
+                    Đăng ký
+                </a>
+
+            </div>
+
+
+            <!-- INFORMATION -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Thông tin
+                </h3>
+
+
+                <p>
+                    Bình Dương, Việt Nam
+                </p>
+
+                <p>
+                    contact@avmpetshop.vn
+                </p>
+
+                <p>
+                    Hỗ trợ trực tuyến
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="currentYear">2026</span>
+                AVM Pet Shop. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         MODAL CHI TIẾT SẢN PHẨM
+    ====================================================== -->
+
+    <div
+        class="product-modal-overlay hidden"
+        id="productModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="productModalTitle"
+    >
+
+        <div class="product-modal">
+
+            <!-- CLOSE -->
+
+            <button
+                type="button"
+                class="product-modal-close"
+                id="closeProductModalButton"
+                aria-label="Đóng chi tiết sản phẩm"
+            >
+                ×
+            </button>
+
+
+            <div class="product-modal-content">
+
+                <!-- VISUAL -->
+
+                <div class="product-modal-visual">
+
+                    <div
+                        class="product-modal-image"
+                        id="productModalImage"
+                    >
+                        AVM
+                    </div>
+
+                </div>
+
+
+                <!-- INFORMATION -->
+
+                <div class="product-modal-information">
+
+                    <span
+                        class="product-modal-category"
+                        id="productModalCategory"
+                    >
+                        Thuốc thú y
+                    </span>
+
+
+                    <h2 id="productModalTitle">
+                        Tên sản phẩm
+                    </h2>
+
+
+                    <p
+                        class="product-modal-description"
+                        id="productModalDescription"
+                    >
+                        Nội dung mô tả sản phẩm.
+                    </p>
+
+
+                    <div class="product-modal-meta">
+
+                        <div>
+
+                            <span>
+                                Đối tượng
+                            </span>
+
+                            <strong id="productModalAnimal">
+                                Chó, mèo
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Trạng thái
+                            </span>
+
+                            <strong id="productModalStatus">
+                                Còn hàng
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-modal-price">
+
+                        <span>
+                            Giá tham khảo
+                        </span>
+
+                        <strong id="productModalPrice">
+                            Liên hệ
+                        </strong>
+
+                    </div>
+
+
+                    <div class="product-modal-actions">
+
+                        <button
+                            type="button"
+                            class="button button-primary"
+                            id="addToConsultationButton"
+                        >
+                            Yêu cầu tư vấn
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="button button-outline"
+                            id="closeProductDetailButton"
+                        >
+                            Đóng
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         NÚT PET SUPPORT
+    ====================================================== -->
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="./js/main.js"></script>
+
+
+    <!-- XỬ LÝ SẢN PHẨM -->
+
+    <script src="./js/products.js"></script>
+
+
+    <!-- PHIÊN ĐĂNG NHẬP VÀ QUYỀN ADMIN -->
+
+    <script
+        type="module"
+        src="./js/user-session.js"
+    ></script>
+<script>
+(function(){
+    if(!window.chatbase || window.chatbase("getState") !== "initialized"){
+        window.chatbase = (...args) => {
+            if(!window.chatbase.q){
+                window.chatbase.q = [];
+            }
+            window.chatbase.q.push(args);
+        };
+
+        window.chatbase = new Proxy(window.chatbase,{
+            get(target, prop){
+                if(prop === "q"){
+                    return target.q;
+                }
+                return (...args) => target(prop, ...args);
+            }
+        });
+    }
+
+    const onLoad = function(){
+        const script = document.createElement("script");
+
+        script.src = "https://www.chatbase.co/embed.min.js";
+        script.id = "1IsnsX9KFWC0lh9WnMgFv";
+        script.domain = "www.chatbase.co";
+
+        document.body.appendChild(script);
+    };
+
+    if(document.readyState === "complete"){
+        onLoad();
+    }else{
+        window.addEventListener("load", onLoad);
+    }
+})();
+</script>
+</body>
+</html>

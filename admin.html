@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Trang quản trị sản phẩm của hệ thống AVM Pet Shop."
+    >
+
+    <meta name="theme-color" content="#020817">
+
+    <title>Quản trị hệ thống | AVM Pet Shop</title>
+
+    <!-- PHÔNG CHỮ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- TẠM ẨN TRANG TRONG LÚC KIỂM TRA QUYỀN -->
+    <style>
+        html.admin-checking body {
+            visibility: hidden;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body class="admin-page">
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header admin-header" id="header">
+
+        <div class="container header-container">
+
+            <!-- LOGO -->
+            <a
+                href="./index.html"
+                class="logo"
+                aria-label="AVM Pet Shop"
+            >
+                <span class="logo-avm">AVM</span>
+                <span class="logo-name">ADMIN</span>
+            </a>
+
+
+            <!-- MENU MOBILE -->
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Mở menu điều hướng"
+                aria-expanded="false"
+                aria-controls="navbar"
+            >
+                ☰
+            </button>
+
+
+            <!-- NAVIGATION -->
+            <nav
+                class="navbar"
+                id="navbar"
+                aria-label="Điều hướng quản trị"
+            >
+                <a
+                    href="./index.html"
+                    class="nav-link"
+                >
+                    Trang chủ
+                </a>
+
+                <a
+                    href="./products.html"
+                    class="nav-link"
+                >
+                    Sản phẩm
+                </a>
+
+                <a
+                    href="./admin.html"
+                    class="nav-link active"
+                    aria-current="page"
+                >
+                    Quản trị
+                </a>
+
+                <div
+                    class="user-menu"
+                    id="userMenu"
+                >
+                    <span
+                        class="admin-user-role"
+                    >
+                        ADMIN
+                    </span>
+
+                    <span
+                        class="user-name"
+                        id="userName"
+                    >
+                        Quản trị viên
+                    </span>
+
+                    <button
+                        type="button"
+                        class="logout-button"
+                        id="logoutButton"
+                    >
+                        Đăng xuất
+                    </button>
+                </div>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="admin-main">
+
+        <!-- =================================================
+             ADMIN HERO
+        ================================================== -->
+
+        <section class="admin-hero">
+
+            <div class="admin-background-grid"></div>
+
+            <div class="container admin-hero-container">
+
+                <div class="admin-hero-content">
+
+                    <p class="section-label">
+                        AVM MANAGEMENT SYSTEM
+                    </p>
+
+                    <h1>
+                        Trung tâm quản trị
+                    </h1>
+
+                    <p>
+                        Quản lý danh mục sản phẩm, trạng thái kho,
+                        dữ liệu hiển thị và hoạt động của hệ thống AVM.
+                    </p>
+
+                </div>
+
+
+                <div class="admin-hero-actions">
+
+                    <a
+                        href="./products.html"
+                        class="button button-outline"
+                    >
+                        Xem trang sản phẩm
+                    </a>
+
+
+                    <!-- NÚT TỰ ĐỘNG CẬP NHẬT TAGS -->
+                    <button
+                        type="button"
+                        class="button button-outline"
+                        id="updateProductTagsButton"
+                    >
+                        Cập nhật Product Tags
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="button button-primary"
+                        id="openAddProductButton"
+                    >
+                        Thêm sản phẩm
+                        <span aria-hidden="true">+</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DASHBOARD
+        ================================================== -->
+
+        <section class="admin-dashboard-section">
+
+            <div class="container">
+
+                <div class="admin-dashboard-grid">
+
+                    <!-- TỔNG SẢN PHẨM -->
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon">
+                            ◈
+                        </div>
+
+                        <div class="admin-stat-content">
+
+                            <span>
+                                Tổng sản phẩm
+                            </span>
+
+                            <strong id="totalProductsCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Đang quản lý trên hệ thống
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CÒN HÀNG -->
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon status-success-icon">
+                            ✓
+                        </div>
+
+                        <div class="admin-stat-content">
+
+                            <span>
+                                Còn hàng
+                            </span>
+
+                            <strong id="inStockProductsCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Sẵn sàng hiển thị
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- HẾT HÀNG -->
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon status-danger-icon">
+                            !
+                        </div>
+
+                        <div class="admin-stat-content">
+
+                            <span>
+                                Tạm hết hàng
+                            </span>
+
+                            <strong id="outOfStockProductsCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Cần cập nhật trạng thái
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- DANH MỤC -->
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon status-yellow-icon">
+                            ◇
+                        </div>
+
+                        <div class="admin-stat-content">
+
+                            <span>
+                                Danh mục
+                            </span>
+
+                            <strong id="categoryCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Nhóm sản phẩm hiện có
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             QUẢN LÝ SẢN PHẨM
+        ================================================== -->
+
+        <section class="section admin-products-section">
+
+            <div class="container">
+
+                <!-- HEADER -->
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <p class="section-label">
+                            PRODUCT MANAGEMENT
+                        </p>
+
+                        <h2 class="section-title">
+                            Quản lý sản phẩm
+                        </h2>
+
+                        <p class="section-description">
+                            Thêm, chỉnh sửa, xóa và cập nhật trạng thái
+                            sản phẩm trên hệ thống.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="button button-primary"
+                        id="addProductButton"
+                    >
+                        Thêm sản phẩm
+                        <span aria-hidden="true">+</span>
+                    </button>
+
+                </div>
+
+
+                <!-- TOOLBAR -->
+                <div class="admin-toolbar">
+
+                    <!-- SEARCH -->
+                    <div class="admin-search">
+
+                        <span class="admin-search-icon">
+                            ⌕
+                        </span>
+
+                        <label
+                            for="adminProductSearch"
+                            class="sr-only"
+                        >
+                            Tìm kiếm sản phẩm
+                        </label>
+
+                        <input
+                            type="search"
+                            id="adminProductSearch"
+                            placeholder="Tìm kiếm theo tên sản phẩm..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <!-- FILTER CATEGORY -->
+                    <div class="admin-filter-group">
+
+                        <label
+                            for="adminCategoryFilter"
+                            class="sr-only"
+                        >
+                            Lọc danh mục
+                        </label>
+
+                        <select id="adminCategoryFilter">
+
+                            <option value="all">
+                                Tất cả danh mục
+                            </option>
+
+                            <option value="medicine">
+                                Thuốc thú y
+                            </option>
+
+                            <option value="nutrition">
+                                Dinh dưỡng
+                            </option>
+
+                            <option value="digestive">
+                                Tiêu hóa
+                            </option>
+
+                            <option value="environment">
+                                Môi trường
+                            </option>
+
+                            <option value="accessory">
+                                Phụ kiện
+                            </option>
+
+                        </select>
+
+
+                        <!-- FILTER STATUS -->
+                        <label
+                            for="adminStatusFilter"
+                            class="sr-only"
+                        >
+                            Lọc trạng thái
+                        </label>
+
+                        <select id="adminStatusFilter">
+
+                            <option value="all">
+                                Tất cả trạng thái
+                            </option>
+
+                            <option value="in-stock">
+                                Còn hàng
+                            </option>
+
+                            <option value="out-of-stock">
+                                Tạm hết hàng
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOADING -->
+                <div
+                    class="admin-loading"
+                    id="adminLoading"
+                >
+                    <div class="loading-ring"></div>
+
+                    <p>
+                        Đang tải dữ liệu sản phẩm...
+                    </p>
+                </div>
+
+
+                <!-- ERROR -->
+                <div
+                    class="admin-error hidden"
+                    id="adminError"
+                >
+                    <div class="admin-error-icon">
+                        !
+                    </div>
+
+                    <div>
+                        <h3>
+                            Không thể tải dữ liệu
+                        </h3>
+
+                        <p id="adminErrorText">
+                            Vui lòng kiểm tra kết nối Firebase.
+                        </p>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="button button-outline"
+                        id="retryAdminButton"
+                    >
+                        Thử lại
+                    </button>
+                </div>
+
+
+                <!-- TABLE -->
+                <div
+                    class="admin-table-wrapper hidden"
+                    id="adminTableWrapper"
+                >
+
+                    <table class="admin-products-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>
+                                    Sản phẩm
+                                </th>
+
+                                <th>
+                                    Danh mục
+                                </th>
+
+                                <th>
+                                    Vật nuôi
+                                </th>
+
+                                <th>
+                                    Giá bán
+                                </th>
+
+                                <th>
+                                    Trạng thái
+                                </th>
+
+                                <th>
+                                    Cập nhật
+                                </th>
+
+                                <th>
+                                    Thao tác
+                                </th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="adminProductsTableBody">
+
+                            <!-- JavaScript chèn sản phẩm tại đây -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- EMPTY -->
+                <div
+                    class="admin-empty hidden"
+                    id="adminEmpty"
+                >
+                    <div class="admin-empty-icon">
+                        ◇
+                    </div>
+
+                    <h3>
+                        Firestore chưa có sản phẩm
+                    </h3>
+
+                    <p>
+                        Nhập 15 sản phẩm mẫu từ products.json
+                        vào cơ sở dữ liệu Firestore.
+                    </p>
+
+                    <div class="admin-empty-actions">
+
+                        <button
+                            type="button"
+                            class="button button-primary"
+                            id="importProductsButton"
+                        >
+                            Nhập 15 sản phẩm mẫu
+                        </button>
+
+                        <button
+                            type="button"
+                            class="button button-outline"
+                            id="emptyAddProductButton"
+                        >
+                            Thêm thủ công
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="currentYear">2026</span>
+                AVM Pet Shop — Hệ thống quản trị.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         MODAL THÊM / SỬA SẢN PHẨM
+    ====================================================== -->
+
+    <div
+        class="admin-modal-overlay hidden"
+        id="productFormModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="productFormModalTitle"
+    >
+
+        <div class="admin-modal admin-product-form-modal">
+
+            <!-- CLOSE -->
+            <button
+                type="button"
+                class="admin-modal-close"
+                id="closeProductFormModalButton"
+                aria-label="Đóng biểu mẫu"
+            >
+                ×
+            </button>
+
+
+            <!-- HEADER -->
+            <div class="admin-modal-header">
+
+                <span class="admin-modal-icon">
+                    AVM
+                </span>
+
+                <div>
+
+                    <p class="admin-modal-label">
+                        PRODUCT FORM
+                    </p>
+
+                    <h2 id="productFormModalTitle">
+                        Thêm sản phẩm
+                    </h2>
+
+                    <p>
+                        Nhập đầy đủ thông tin sản phẩm bên dưới.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORM -->
+            <form
+                class="admin-product-form"
+                id="adminProductForm"
+                novalidate
+            >
+
+                <input
+                    type="hidden"
+                    id="editingProductId"
+                >
+
+
+                <!-- TÊN SẢN PHẨM -->
+                <div class="admin-form-field admin-form-full">
+
+                    <label for="adminProductName">
+                        Tên sản phẩm
+                    </label>
+
+                    <input
+                        type="text"
+                        id="adminProductName"
+                        placeholder="Ví dụ: AVM Digestive Pro"
+                        required
+                    >
+
+                    <small
+                        class="admin-field-error"
+                        id="adminProductNameError"
+                    ></small>
+
+                </div>
+
+
+                <!-- DANH MỤC -->
+                <div class="admin-form-field">
+
+                    <label for="adminProductCategory">
+                        Danh mục
+                    </label>
+
+                    <select
+                        id="adminProductCategory"
+                        required
+                    >
+                        <option value="">
+                            Chọn danh mục
+                        </option>
+
+                        <option value="medicine">
+                            Thuốc thú y
+                        </option>
+
+                        <option value="nutrition">
+                            Dinh dưỡng
+                        </option>
+
+                        <option value="digestive">
+                            Tiêu hóa
+                        </option>
+
+                        <option value="environment">
+                            Môi trường
+                        </option>
+
+                        <option value="accessory">
+                            Phụ kiện
+                        </option>
+                    </select>
+
+                    <small
+                        class="admin-field-error"
+                        id="adminProductCategoryError"
+                    ></small>
+
+                </div>
+
+
+                <!-- TÊN DANH MỤC -->
+                <div class="admin-form-field">
+
+                    <label for="adminProductCategoryName">
+                        Tên hiển thị danh mục
+                    </label>
+
+                    <input
+                        type="text"
+                        id="adminProductCategoryName"
+                        placeholder="Ví dụ: Dinh dưỡng"
+                        required
+                    >
+
+                    <small
+                        class="admin-field-error"
+                        id="adminProductCategoryNameError"
+                    ></small>
+
+                </div>
+
+
+                <!-- GIÁ -->
+                <div class="admin-form-field">
+
+                    <label for="adminProductPrice">
+                        Giá tham khảo
+                    </label>
+
+                    <input
+                        type="number"
+                        id="adminProductPrice"
+                        min="0"
+                        step="1000"
+                        placeholder="185000"
+                        required
+                    >
+
+                    <small
+                        class="admin-field-error"
+                        id="adminProductPriceError"
+                    ></small>
+
+                </div>
+
+
+                <!-- TRẠNG THÁI -->
+                <div class="admin-form-field">
+
+                    <label for="adminProductStatus">
+                        Trạng thái
+                    </label>
+
+                    <select
+                        id="adminProductStatus"
+                        required
+                    >
+                        <option value="in-stock">
+                            Còn hàng
+                        </option>
+
+                        <option value="out-of-stock">
+                            Tạm hết hàng
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <!-- KÝ HIỆU -->
+                <div class="admin-form-field">
+
+                    <label for="adminProductSymbol">
+                        Ký hiệu sản phẩm
+                    </label>
+
+                    <input
+                        type="text"
+                        id="adminProductSymbol"
+                        maxlength="3"
+                        placeholder="DP"
+                        required
+                    >
+
+                    <small
+                        class="admin-field-error"
+                        id="adminProductSymbolError"
+                    ></small>
+
+                </div>
+
+
+                <!-- MÀU -->
+                <div class="admin-form-field">
+
+                    <label for="adminProductAccent">
+                        Màu giao diện
+                    </label>
+
+                    <select id="adminProductAccent">
+
+                        <option value="blue">
+                            Xanh dương
+                        </option>
+
+                        <option value="yellow">
+                            Vàng
+                        </option>
+
+                        <option value="green">
+                            Xanh lá
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- VẬT NUÔI -->
+                <div class="admin-form-field admin-form-full">
+
+                    <span class="admin-field-title">
+                        Đối tượng vật nuôi
+                    </span>
+
+                    <div class="admin-animal-options">
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="adminAnimal"
+                                value="dog"
+                            >
+                            Chó
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="adminAnimal"
+                                value="cat"
+                            >
+                            Mèo
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="adminAnimal"
+                                value="poultry"
+                            >
+                            Gia cầm
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="adminAnimal"
+                                value="pig"
+                            >
+                            Heo
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="adminAnimal"
+                                value="aquaculture"
+                            >
+                            Thủy sản
+                        </label>
+
+                    </div>
+
+                    <small
+                        class="admin-field-error"
+                        id="adminProductAnimalError"
+                    ></small>
+
+                </div>
+
+
+                <!-- MÔ TẢ -->
+                <div class="admin-form-field admin-form-full">
+
+                    <label for="adminProductDescription">
+                        Mô tả sản phẩm
+                    </label>
+
+                    <textarea
+                        id="adminProductDescription"
+                        rows="5"
+                        placeholder="Nhập công dụng và thông tin sản phẩm..."
+                        required
+                    ></textarea>
+
+                    <div class="admin-character-count">
+
+                        <span id="descriptionCharacterCount">
+                            0
+                        </span>
+
+                        <span>
+                            / 500 ký tự
+                        </span>
+
+                    </div>
+
+                    <small
+                        class="admin-field-error"
+                        id="adminProductDescriptionError"
+                    ></small>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+                <div
+                    class="auth-message hidden admin-form-full"
+                    id="adminFormMessage"
+                    role="alert"
+                ></div>
+
+
+                <!-- ACTIONS -->
+                <div class="admin-form-actions admin-form-full">
+
+                    <button
+                        type="button"
+                        class="button button-outline"
+                        id="cancelProductFormButton"
+                    >
+                        Hủy
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="button button-primary"
+                        id="saveProductButton"
+                    >
+                        <span id="saveProductButtonText">
+                            Lưu sản phẩm
+                        </span>
+
+                        <span
+                            class="auth-button-loader hidden"
+                            id="saveProductLoader"
+                        ></span>
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MODAL XÁC NHẬN XÓA
+    ====================================================== -->
+
+    <div
+        class="admin-modal-overlay hidden"
+        id="deleteProductModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="deleteProductModalTitle"
+    >
+
+        <div class="admin-modal admin-delete-modal">
+
+            <div class="delete-warning-icon">
+                !
+            </div>
+
+            <h2 id="deleteProductModalTitle">
+                Xác nhận xóa sản phẩm
+            </h2>
+
+            <p>
+                Bạn đang chuẩn bị xóa sản phẩm:
+            </p>
+
+            <strong id="deleteProductName">
+                Tên sản phẩm
+            </strong>
+
+            <p class="delete-warning-text">
+                Dữ liệu sau khi xóa sẽ không thể khôi phục.
+            </p>
+
+
+            <div class="admin-delete-actions">
+
+                <button
+                    type="button"
+                    class="button button-outline"
+                    id="cancelDeleteProductButton"
+                >
+                    Không xóa
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-danger-button"
+                    id="confirmDeleteProductButton"
+                >
+                    <span id="deleteProductButtonText">
+                        Xóa sản phẩm
+                    </span>
+
+                    <span
+                        class="auth-button-loader hidden"
+                        id="deleteProductLoader"
+                    ></span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        class="admin-toast hidden"
+        id="adminToast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <span
+            class="admin-toast-icon"
+            id="adminToastIcon"
+        >
+            ✓
+        </span>
+
+        <div>
+
+            <strong id="adminToastTitle">
+                Thành công
+            </strong>
+
+            <p id="adminToastMessage">
+                Dữ liệu đã được cập nhật.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="./js/main.js"></script>
+
+    <script
+        type="module"
+        src="./js/admin.js"
+    ></script>
+
+    <script
+        type="module"
+        src="./js/update-product-tags.js"
+    ></script>
+<script>
+(function(){
+    if(!window.chatbase || window.chatbase("getState") !== "initialized"){
+        window.chatbase = (...args) => {
+            if(!window.chatbase.q){
+                window.chatbase.q = [];
+            }
+            window.chatbase.q.push(args);
+        };
+
+        window.chatbase = new Proxy(window.chatbase,{
+            get(target, prop){
+                if(prop === "q"){
+                    return target.q;
+                }
+                return (...args) => target(prop, ...args);
+            }
+        });
+    }
+
+    const onLoad = function(){
+        const script = document.createElement("script");
+
+        script.src = "https://www.chatbase.co/embed.min.js";
+        script.id = "1IsnsX9KFWC0lh9WnMgFv";
+        script.domain = "www.chatbase.co";
+
+        document.body.appendChild(script);
+    };
+
+    if(document.readyState === "complete"){
+        onLoad();
+    }else{
+        window.addEventListener("load", onLoad);
+    }
+})();
+</script>
+</body>
+</html>

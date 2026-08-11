@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Pet Support hỗ trợ người dùng tìm hiểu tình trạng vật nuôi và gợi ý nhóm sản phẩm phù hợp."
+    >
+
+    <meta name="theme-color" content="#020817">
+
+    <title>Pet Support | AVM Pet Shop</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="./css/style.css"
+    >
+
+    <!-- AUTH GUARD -->
+    <script
+        type="module"
+        src="./js/auth-guard.js"
+    ></script>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header
+        class="header"
+        id="header"
+    >
+
+        <div class="container header-container">
+
+            <!-- LOGO -->
+
+            <a
+                href="./index.html"
+                class="logo"
+                aria-label="AVM Pet Shop"
+            >
+                <span class="logo-avm">
+                    AVM
+                </span>
+
+                <span class="logo-name">
+                    PET SHOP
+                </span>
+            </a>
+
+
+            <!-- MOBILE MENU -->
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Mở menu điều hướng"
+                aria-expanded="false"
+                aria-controls="navbar"
+            >
+                ☰
+            </button>
+
+
+            <!-- NAVBAR -->
+
+            <nav
+                class="navbar"
+                id="navbar"
+                aria-label="Điều hướng chính"
+            >
+
+                <a
+                    href="./index.html"
+                    class="nav-link"
+                >
+                    Trang chủ
+                </a>
+
+                <a
+                    href="./products.html"
+                    class="nav-link"
+                >
+                    Sản phẩm
+                </a>
+
+                <a
+                    href="./api.html"
+                    class="nav-link"
+                >
+                    API Demo
+                </a>
+
+                <a
+                    href="./support.html"
+                    class="nav-link active"
+                    aria-current="page"
+                >
+                    Pet Support
+                </a>
+
+                <a
+                    href="./contact.html"
+                    class="nav-link"
+                >
+                    Liên hệ
+                </a>
+
+
+                <!-- CHỈ ADMIN MỚI THẤY -->
+
+                <a
+                    href="./admin.html"
+                    class="nav-link admin-only-link hidden"
+                    id="adminPageLink"
+                >
+                    Quản trị
+                </a>
+
+
+                <!-- USER -->
+
+                <div
+                    class="user-menu hidden"
+                    id="userMenu"
+                >
+
+                    <span
+                        class="user-name"
+                        id="userName"
+                    >
+                        Thành viên AVM
+                    </span>
+
+                    <button
+                        type="button"
+                        class="logout-button"
+                        id="logoutButton"
+                    >
+                        Đăng xuất
+                    </button>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="support-page-hero">
+
+            <div class="support-background-grid"></div>
+
+            <div class="container support-hero-container">
+
+                <!-- CONTENT -->
+
+                <div class="support-hero-content">
+
+                    <p class="section-label">
+                        AVM PET SUPPORT
+                    </p>
+
+                    <h1>
+                        Trợ lý chăm sóc vật nuôi
+                    </h1>
+
+                    <p>
+                        Cung cấp thông tin cơ bản về vật nuôi và
+                        các dấu hiệu đang gặp phải. Hệ thống sẽ
+                        phân tích dữ liệu và đưa ra gợi ý tham khảo.
+                    </p>
+
+                    <div class="support-warning">
+
+                        <span aria-hidden="true">
+                            !
+                        </span>
+
+                        <p>
+                            Kết quả chỉ mang tính tham khảo,
+                            không thay thế chẩn đoán hoặc chỉ định
+                            của bác sĩ thú y.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="#supportTool"
+                        class="button button-primary"
+                    >
+                        Bắt đầu hỗ trợ
+
+                        <span aria-hidden="true">
+                            ↓
+                        </span>
+                    </a>
+
+                </div>
+
+
+                <!-- HERO VISUAL -->
+
+                <div
+                    class="support-hero-visual"
+                    aria-hidden="true"
+                >
+
+                    <div
+                        class="support-orbit support-orbit-one"
+                    ></div>
+
+                    <div
+                        class="support-orbit support-orbit-two"
+                    ></div>
+
+
+                    <div class="support-core">
+
+                        <img
+                            src="./images/ai-support.png"
+                            alt=""
+                            class="support-core-image"
+                        >
+
+                        <span class="support-core-status">
+                            ONLINE
+                        </span>
+
+                        <span
+                            class="support-node support-node-one"
+                        >
+                            CARE
+                        </span>
+
+                        <span
+                            class="support-node support-node-two"
+                        >
+                            DATA
+                        </span>
+
+                        <span
+                            class="support-node support-node-three"
+                        >
+                            VET
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PROCESS
+        ================================================== -->
+
+        <section class="support-process-section">
+
+            <div class="container">
+
+                <div class="support-process-grid">
+
+                    <!-- STEP 1 -->
+
+                    <article class="support-process-card">
+
+                        <span class="support-process-number">
+                            01
+                        </span>
+
+                        <div class="support-process-icon">
+                            ◇
+                        </div>
+
+                        <h2>
+                            Chọn vật nuôi
+                        </h2>
+
+                        <p>
+                            Chọn đối tượng cần hỗ trợ như chó,
+                            mèo, gia cầm, heo hoặc thủy sản.
+                        </p>
+
+                    </article>
+
+
+                    <!-- STEP 2 -->
+
+                    <article class="support-process-card">
+
+                        <span class="support-process-number">
+                            02
+                        </span>
+
+                        <div class="support-process-icon">
+                            +
+                        </div>
+
+                        <h2>
+                            Nhập tình trạng
+                        </h2>
+
+                        <p>
+                            Cung cấp độ tuổi, vấn đề chính
+                            và các dấu hiệu đang quan sát được.
+                        </p>
+
+                    </article>
+
+
+                    <!-- STEP 3 -->
+
+                    <article class="support-process-card">
+
+                        <span class="support-process-number">
+                            03
+                        </span>
+
+                        <div class="support-process-icon">
+                            ✓
+                        </div>
+
+                        <h2>
+                            Nhận gợi ý
+                        </h2>
+
+                        <p>
+                            Hệ thống phân tích thông tin và đưa ra
+                            nhóm giải pháp để tham khảo.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SUPPORT TOOL
+        ================================================== -->
+
+        <section
+            class="section support-tool-section"
+            id="supportTool"
+        >
+
+            <div class="container">
+
+                <!-- HEADING -->
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        SUPPORT ANALYSIS
+                    </p>
+
+                    <h2 class="section-title">
+                        Phân tích nhu cầu chăm sóc
+                    </h2>
+
+                    <p class="section-description">
+                        Điền đầy đủ thông tin để hệ thống
+                        đưa ra gợi ý chính xác và rõ ràng hơn.
+                    </p>
+
+                </div>
+
+
+                <div class="support-tool-layout">
+
+                    <!-- =================================================
+                         FORM PANEL
+                    ================================================== -->
+
+                    <div class="support-form-panel">
+
+                        <div class="support-panel-header">
+
+                            <div>
+
+                                <span class="support-panel-label">
+                                    INPUT DATA
+                                </span>
+
+                                <h3>
+                                    Thông tin vật nuôi
+                                </h3>
+
+                            </div>
+
+                            <span class="support-panel-status">
+                                Sẵn sàng
+                            </span>
+
+                        </div>
+
+
+                        <form
+                            class="support-form"
+                            id="supportForm"
+                            novalidate
+                        >
+
+                            <!-- =============================
+                                 LOẠI VẬT NUÔI
+                            ============================== -->
+
+                            <div class="support-form-field">
+
+                                <label for="supportAnimal">
+                                    Loại vật nuôi
+                                </label>
+
+                                <select
+                                    id="supportAnimal"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Chọn vật nuôi
+                                    </option>
+
+                                    <option value="dog">
+                                        Chó
+                                    </option>
+
+                                    <option value="cat">
+                                        Mèo
+                                    </option>
+
+                                    <option value="poultry">
+                                        Gia cầm
+                                    </option>
+
+                                    <option value="pig">
+                                        Heo
+                                    </option>
+
+                                    <option value="aquaculture">
+                                        Thủy sản
+                                    </option>
+
+                                </select>
+
+                                <small
+                                    class="support-field-error"
+                                    id="supportAnimalError"
+                                ></small>
+
+                            </div>
+
+
+                            <!-- =============================
+                                 ĐỘ TUỔI
+                            ============================== -->
+
+                            <div class="support-form-field">
+
+                                <label for="supportAge">
+                                    Độ tuổi
+                                </label>
+
+                                <select
+                                    id="supportAge"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Chọn độ tuổi
+                                    </option>
+
+                                    <option value="1 tháng">
+                                        1 tháng
+                                    </option>
+
+                                    <option value="2 tháng">
+                                        2 tháng
+                                    </option>
+
+                                    <option value="3 tháng">
+                                        3 tháng
+                                    </option>
+
+                                    <option value="4 tháng">
+                                        4 tháng
+                                    </option>
+
+                                    <option value="5 tháng">
+                                        5 tháng
+                                    </option>
+
+                                    <option value="6 tháng">
+                                        6 tháng
+                                    </option>
+
+                                    <option value="7 tháng">
+                                        7 tháng
+                                    </option>
+
+                                    <option value="8 tháng">
+                                        8 tháng
+                                    </option>
+
+                                    <option value="9 tháng">
+                                        9 tháng
+                                    </option>
+
+                                    <option value="10 tháng">
+                                        10 tháng
+                                    </option>
+
+                                    <option value="11 tháng">
+                                        11 tháng
+                                    </option>
+
+                                    <option value="12 tháng">
+                                        12 tháng
+                                    </option>
+
+                                    <option value="trên 12 tháng">
+                                        Trên 12 tháng
+                                    </option>
+
+                                </select>
+
+                                <small
+                                    class="support-field-error"
+                                    id="supportAgeError"
+                                ></small>
+
+                            </div>
+
+
+                            <!-- =============================
+                                 VẤN ĐỀ
+                            ============================== -->
+
+                            <div
+                                class="support-form-field support-form-full"
+                            >
+
+                                <label for="supportProblem">
+                                    Vấn đề chính
+                                </label>
+
+                                <select
+                                    id="supportProblem"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Chọn vấn đề cần hỗ trợ
+                                    </option>
+
+                                    <option value="digestive">
+                                        Tiêu hóa và hấp thu
+                                    </option>
+
+                                    <option value="nutrition">
+                                        Dinh dưỡng và thể trạng
+                                    </option>
+
+                                    <option value="respiratory">
+                                        Hô hấp
+                                    </option>
+
+                                    <option value="skin">
+                                        Da và lông
+                                    </option>
+
+                                    <option value="environment">
+                                        Môi trường và nguồn nước
+                                    </option>
+
+                                    <option value="joint">
+                                        Xương và khớp
+                                    </option>
+
+                                    <option value="other">
+                                        Vấn đề khác
+                                    </option>
+
+                                </select>
+
+                                <small
+                                    class="support-field-error"
+                                    id="supportProblemError"
+                                ></small>
+
+                            </div>
+
+
+                            <!-- =============================
+                                 MÔ TẢ DẤU HIỆU
+                            ============================== -->
+
+                            <div
+                                class="support-form-field support-form-full"
+                            >
+
+                                <label for="supportSymptoms">
+                                    Mô tả dấu hiệu quan sát được
+                                </label>
+
+                                <textarea
+                                    id="supportSymptoms"
+                                    rows="6"
+                                    maxlength="500"
+                                    placeholder="Ví dụ: chó bỏ ăn, thở nhanh, ho, chảy nước mũi, mệt..."
+                                    required
+                                ></textarea>
+
+                                <div class="support-character-count">
+
+                                    <span id="supportCharacterCount">
+                                        0
+                                    </span>
+
+                                    <span>
+                                        / 500 ký tự
+                                    </span>
+
+                                </div>
+
+                                <small
+                                    class="support-field-error"
+                                    id="supportSymptomsError"
+                                ></small>
+
+                            </div>
+
+
+                            <!-- =============================
+                                 MỨC ĐỘ
+                            ============================== -->
+
+                            <div
+                                class="support-form-field support-form-full"
+                            >
+
+                                <span class="support-field-title">
+                                    Mức độ hiện tại
+                                </span>
+
+
+                                <div class="support-severity-options">
+
+                                    <!-- NHẸ -->
+
+                                    <label>
+
+                                        <input
+                                            type="radio"
+                                            name="supportSeverity"
+                                            value="mild"
+                                            checked
+                                        >
+
+                                        <span>
+
+                                            <strong>
+                                                Nhẹ
+                                            </strong>
+
+                                            <small>
+                                                Mới xuất hiện
+                                            </small>
+
+                                        </span>
+
+                                    </label>
+
+
+                                    <!-- TRUNG BÌNH -->
+
+                                    <label>
+
+                                        <input
+                                            type="radio"
+                                            name="supportSeverity"
+                                            value="medium"
+                                        >
+
+                                        <span>
+
+                                            <strong>
+                                                Trung bình
+                                            </strong>
+
+                                            <small>
+                                                Ảnh hưởng sinh hoạt
+                                            </small>
+
+                                        </span>
+
+                                    </label>
+
+
+                                    <!-- NGHIÊM TRỌNG -->
+
+                                    <label>
+
+                                        <input
+                                            type="radio"
+                                            name="supportSeverity"
+                                            value="serious"
+                                        >
+
+                                        <span>
+
+                                            <strong>
+                                                Nghiêm trọng
+                                            </strong>
+
+                                            <small>
+                                                Cần kiểm tra sớm
+                                            </small>
+
+                                        </span>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- =============================
+                                 MESSAGE
+                            ============================== -->
+
+                            <div
+                                class="auth-message hidden support-form-full"
+                                id="supportFormMessage"
+                                role="alert"
+                            ></div>
+
+
+                            <!-- =============================
+                                 BUTTONS
+                            ============================== -->
+
+                            <div
+                                class="support-form-actions support-form-full"
+                            >
+
+                                <button
+                                    type="button"
+                                    class="button button-outline"
+                                    id="resetSupportButton"
+                                >
+                                    Nhập lại
+                                </button>
+
+
+                                <button
+                                    type="submit"
+                                    class="button button-primary"
+                                    id="analyzeSupportButton"
+                                >
+
+                                    <span id="analyzeSupportButtonText">
+                                        Phân tích thông tin
+                                    </span>
+
+                                    <span
+                                        class="auth-button-loader hidden"
+                                        id="supportLoader"
+                                    ></span>
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         RESULT PANEL
+                    ================================================== -->
+
+                    <div class="support-result-panel">
+
+                        <div class="support-panel-header">
+
+                            <div>
+
+                                <span class="support-panel-label">
+                                    ANALYSIS RESULT
+                                </span>
+
+                                <h3>
+                                    Kết quả hỗ trợ
+                                </h3>
+
+                            </div>
+
+                            <span
+                                class="support-result-status"
+                                id="supportResultStatus"
+                            >
+                                Chưa phân tích
+                            </span>
+
+                        </div>
+
+
+                        <!-- =============================
+                             EMPTY RESULT
+                        ============================== -->
+
+                        <div
+                            class="support-result-empty"
+                            id="supportResultEmpty"
+                        >
+
+                            <div class="support-result-empty-icon">
+                                ◇
+                            </div>
+
+                            <h3>
+                                Chưa có kết quả
+                            </h3>
+
+                            <p>
+                                Điền thông tin bên trái và nhấn
+                                “Phân tích thông tin”.
+                            </p>
+
+                        </div>
+
+
+                        <!-- =============================
+                             RESULT CONTENT
+                        ============================== -->
+
+                        <div
+                            class="support-result-content hidden"
+                            id="supportResultContent"
+                        >
+
+                            <!-- RESULT SUMMARY -->
+
+                            <div class="support-result-summary">
+
+                                <span
+                                    class="support-result-icon"
+                                    id="supportResultIcon"
+                                >
+                                    ✓
+                                </span>
+
+                                <div>
+
+                                    <span>
+                                        Đánh giá sơ bộ
+                                    </span>
+
+                                    <h4 id="supportResultTitle">
+                                        Kết quả phân tích
+                                    </h4>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- DESCRIPTION -->
+
+                            <p
+                                class="support-result-description"
+                                id="supportResultDescription"
+                            >
+                                Nội dung phân tích sẽ hiển thị tại đây.
+                            </p>
+
+
+                            <!-- =============================
+                                 AI ANALYSIS
+                            ============================== -->
+
+                            <div
+                                class="support-result-section"
+                                id="supportAiSection"
+                            >
+
+                                <h4>
+                                    Phân tích tình trạng
+                                </h4>
+
+                                <div class="support-ai-analysis">
+
+                                    <p id="supportAiAnalysis">
+                                        Hệ thống sẽ phân tích phần mô tả
+                                        dấu hiệu của vật nuôi tại đây.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- =============================
+                                 PRODUCT SUGGESTIONS
+                            ============================== -->
+
+                            <div class="support-result-section">
+
+                                <h4>
+                                    Nhóm giải pháp đề xuất
+                                </h4>
+
+                                <div
+                                    class="support-suggestion-list"
+                                    id="supportSuggestionList"
+                                ></div>
+
+                            </div>
+
+
+                            <!-- =============================
+                                 ADVICE
+                            ============================== -->
+
+                            <div class="support-result-section">
+
+                                <h4>
+                                    Hướng xử lý ban đầu
+                                </h4>
+
+                                <ul
+                                    class="support-advice-list"
+                                    id="supportAdviceList"
+                                ></ul>
+
+                            </div>
+
+
+                            <!-- =============================
+                                 EMERGENCY WARNING
+                            ============================== -->
+
+                            <div
+                                class="support-emergency-warning hidden"
+                                id="supportEmergencyWarning"
+                            >
+
+                                <span>
+                                    !
+                                </span>
+
+                                <p>
+                                    Tình trạng được đánh dấu nghiêm trọng.
+                                    Hãy liên hệ bác sĩ thú y hoặc cơ sở
+                                    chuyên môn sớm.
+                                </p>
+
+                            </div>
+
+
+                            <!-- =============================
+                                 RESULT ACTIONS
+                            ============================== -->
+
+                            <div class="support-result-actions">
+
+                                <a
+                                    href="./products.html"
+                                    class="button button-primary"
+                                >
+                                    Xem sản phẩm
+                                </a>
+
+                                <button
+                                    type="button"
+                                    class="button button-outline"
+                                    id="newSupportAnalysisButton"
+                                >
+                                    Phân tích mới
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NOTES
+        ================================================== -->
+
+        <section class="support-note-section">
+
+            <div class="container support-note-grid">
+
+
+                <!-- NOTE 1 -->
+
+                <article class="support-note-card">
+
+                    <span>
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Theo dõi sát tình trạng
+                        </h3>
+
+                        <p>
+                            Ghi nhận thời gian, mức độ và thay đổi
+                            của các dấu hiệu để cung cấp thông tin
+                            chính xác hơn.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- NOTE 2 -->
+
+                <article class="support-note-card">
+
+                    <span>
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Không tự ý dùng thuốc
+                        </h3>
+
+                        <p>
+                            Không tự ý sử dụng thuốc kê đơn
+                            hoặc kháng sinh khi chưa có
+                            hướng dẫn chuyên môn.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- NOTE 3 -->
+
+                <article class="support-note-card">
+
+                    <span>
+                        03
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Liên hệ chuyên gia
+                        </h3>
+
+                        <p>
+                            Với tình trạng kéo dài hoặc nghiêm trọng,
+                            hãy liên hệ bác sĩ thú y để được kiểm tra.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+                <a
+                    href="./index.html"
+                    class="logo"
+                >
+
+                    <span class="logo-avm">
+                        AVM
+                    </span>
+
+                    <span class="logo-name">
+                        PET SHOP
+                    </span>
+
+                </a>
+
+                <p>
+                    Nền tảng giới thiệu và quản lý sản phẩm
+                    chăm sóc, phòng ngừa và hỗ trợ điều trị thú y.
+                </p>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Điều hướng
+                </h3>
+
+                <a href="./index.html">
+                    Trang chủ
+                </a>
+
+                <a href="./products.html">
+                    Sản phẩm
+                </a>
+
+                <a href="./api.html">
+                    API Demo
+                </a>
+
+                <a href="./support.html">
+                    Pet Support
+                </a>
+
+            </div>
+
+
+            <!-- SYSTEM -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Hệ thống
+                </h3>
+
+                <a href="./admin.html">
+                    Quản trị
+                </a>
+
+                <a href="./contact.html">
+                    Liên hệ
+                </a>
+
+                <a href="./login.html">
+                    Đăng nhập
+                </a>
+
+                <a href="./register.html">
+                    Đăng ký
+                </a>
+
+            </div>
+
+
+            <!-- INFORMATION -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Thông tin
+                </h3>
+
+                <p>
+                    Bình Dương, Việt Nam
+                </p>
+
+                <p>
+                    contact@avmpetshop.vn
+                </p>
+
+                <p>
+                    Hỗ trợ trực tuyến
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="currentYear">2026</span>
+                AVM Pet Shop. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="./js/main.js"></script>
+
+    <script
+    type="module"
+    src="./js/support.js"
+></script>
+
+    <script
+        type="module"
+        src="./js/user-session.js"
+    ></script>
+<script>
+(function(){
+    if(!window.chatbase || window.chatbase("getState") !== "initialized"){
+        window.chatbase = (...args) => {
+            if(!window.chatbase.q){
+                window.chatbase.q = [];
+            }
+            window.chatbase.q.push(args);
+        };
+
+        window.chatbase = new Proxy(window.chatbase,{
+            get(target, prop){
+                if(prop === "q"){
+                    return target.q;
+                }
+                return (...args) => target(prop, ...args);
+            }
+        });
+    }
+
+    const onLoad = function(){
+        const script = document.createElement("script");
+
+        script.src = "https://www.chatbase.co/embed.min.js";
+        script.id = "1IsnsX9KFWC0lh9WnMgFv";
+        script.domain = "www.chatbase.co";
+
+        document.body.appendChild(script);
+    };
+
+    if(document.readyState === "complete"){
+        onLoad();
+    }else{
+        window.addEventListener("load", onLoad);
+    }
+})();
+</script>
+</body>
+</html>

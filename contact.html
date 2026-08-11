@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Liên hệ AVM Pet Shop để được hỗ trợ về sản phẩm, kỹ thuật và chăm sóc vật nuôi."
+    >
+
+    <meta name="theme-color" content="#020817">
+
+    <title>Liên hệ | AVM Pet Shop</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- AUTH GUARD -->
+    <script
+        type="module"
+        src="./js/auth-guard.js"
+    ></script>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header" id="header">
+
+        <div class="container header-container">
+
+            <a
+                href="./index.html"
+                class="logo"
+                aria-label="AVM Pet Shop"
+            >
+                <span class="logo-avm">AVM</span>
+                <span class="logo-name">PET SHOP</span>
+            </a>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Mở menu điều hướng"
+                aria-expanded="false"
+                aria-controls="navbar"
+            >
+                ☰
+            </button>
+
+            <nav
+                class="navbar"
+                id="navbar"
+                aria-label="Điều hướng chính"
+            >
+                <a
+                    href="./index.html"
+                    class="nav-link"
+                >
+                    Trang chủ
+                </a>
+
+                <a
+                    href="./products.html"
+                    class="nav-link"
+                >
+                    Sản phẩm
+                </a>
+
+                <a
+                    href="./api.html"
+                    class="nav-link"
+                >
+                    API Demo
+                </a>
+
+                <a
+                    href="./support.html"
+                    class="nav-link"
+                >
+                    Pet Support
+                </a>
+
+                <a
+                    href="./contact.html"
+                    class="nav-link active"
+                    aria-current="page"
+                >
+                    Liên hệ
+                </a>
+
+                <!-- CHỈ ADMIN MỚI THẤY -->
+                <a
+                    href="./admin.html"
+                    class="nav-link admin-only-link hidden"
+                    id="adminPageLink"
+                >
+                    Quản trị
+                </a>
+
+                <!-- USER MENU -->
+                <div
+                    class="user-menu hidden"
+                    id="userMenu"
+                >
+                    <span
+                        class="user-name"
+                        id="userName"
+                    >
+                        Thành viên AVM
+                    </span>
+
+                    <button
+                        type="button"
+                        class="logout-button"
+                        id="logoutButton"
+                    >
+                        Đăng xuất
+                    </button>
+                </div>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="contact-page-hero">
+
+            <div class="contact-background-grid"></div>
+
+            <div class="container contact-hero-container">
+
+                <div class="contact-hero-content">
+
+                    <p class="section-label">
+                        CONTACT AVM
+                    </p>
+
+                    <h1>
+                        Kết nối với đội ngũ AVM
+                    </h1>
+
+                    <p>
+                        Gửi yêu cầu hỗ trợ về sản phẩm, kỹ thuật,
+                        hợp tác hoặc thông tin hệ thống. Đội ngũ AVM
+                        sẽ tiếp nhận và phản hồi trong thời gian sớm nhất.
+                    </p>
+
+                    <div class="contact-hero-actions">
+
+                        <a
+                            href="#contactFormSection"
+                            class="button button-primary"
+                        >
+                            Gửi yêu cầu
+                            <span aria-hidden="true">↓</span>
+                        </a>
+
+                        <a
+                            href="./support.html"
+                            class="button button-outline"
+                        >
+                            Pet Support
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MINH HỌA -->
+
+                <div
+                    class="contact-hero-visual"
+                    aria-hidden="true"
+                >
+                    <div class="contact-orbit contact-orbit-one"></div>
+                    <div class="contact-orbit contact-orbit-two"></div>
+
+                    <div class="contact-core">
+
+                        <div class="contact-core-symbol">
+                            @
+                        </div>
+
+                        <span class="contact-node contact-node-email">
+                            EMAIL
+                        </span>
+
+                        <span class="contact-node contact-node-support">
+                            SUPPORT
+                        </span>
+
+                        <span class="contact-node contact-node-online">
+                            ONLINE
+                        </span>
+
+                        <span class="contact-core-status">
+                            AVAILABLE
+                        </span>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTACT INFORMATION
+        ================================================== -->
+
+        <section class="contact-information-section">
+
+            <div class="container contact-information-grid">
+
+                <article class="contact-information-card">
+
+                    <div class="contact-information-icon">
+                        @
+                    </div>
+
+                    <div>
+                        <span>
+                            Email hỗ trợ
+                        </span>
+
+                        <h2>
+                            contact@avmpetshop.vn
+                        </h2>
+
+                        <p>
+                            Tiếp nhận câu hỏi về sản phẩm,
+                            tài khoản và hệ thống.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="contact-information-card">
+
+                    <div class="contact-information-icon">
+                        ◇
+                    </div>
+
+                    <div>
+                        <span>
+                            Khu vực hoạt động
+                        </span>
+
+                        <h2>
+                            Bình Dương, Việt Nam
+                        </h2>
+
+                        <p>
+                            Hỗ trợ trực tuyến cho người dùng
+                            và đối tác trên toàn quốc.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="contact-information-card">
+
+                    <div class="contact-information-icon">
+                        ◷
+                    </div>
+
+                    <div>
+                        <span>
+                            Thời gian phản hồi
+                        </span>
+
+                        <h2>
+                            Trong vòng 24 giờ
+                        </h2>
+
+                        <p>
+                            Yêu cầu được lưu trên hệ thống
+                            và xử lý theo mức độ ưu tiên.
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTACT FORM
+        ================================================== -->
+
+        <section
+            class="section contact-form-section"
+            id="contactFormSection"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        CONTACT REQUEST
+                    </p>
+
+                    <h2 class="section-title">
+                        Gửi yêu cầu liên hệ
+                    </h2>
+
+                    <p class="section-description">
+                        Điền đầy đủ thông tin để đội ngũ AVM
+                        tiếp nhận và hỗ trợ chính xác hơn.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-layout">
+
+                    <!-- FORM PANEL -->
+
+                    <div class="contact-form-panel">
+
+                        <div class="contact-panel-header">
+
+                            <div>
+                                <span class="contact-panel-label">
+                                    REQUEST FORM
+                                </span>
+
+                                <h3>
+                                    Thông tin liên hệ
+                                </h3>
+                            </div>
+
+                            <span
+                                class="contact-panel-status"
+                                id="contactPanelStatus"
+                            >
+                                Sẵn sàng
+                            </span>
+
+                        </div>
+
+
+                        <form
+                            class="contact-form"
+                            id="contactForm"
+                            novalidate
+                        >
+
+                            <!-- HỌ TÊN -->
+
+                            <div class="contact-form-field">
+
+                                <label for="contactFullName">
+                                    Họ và tên
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="contactFullName"
+                                    name="fullName"
+                                    placeholder="Nhập họ và tên"
+                                    autocomplete="name"
+                                    maxlength="80"
+                                    required
+                                >
+
+                                <small
+                                    class="contact-field-error"
+                                    id="contactFullNameError"
+                                ></small>
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+
+                            <div class="contact-form-field">
+
+                                <label for="contactEmail">
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="contactEmail"
+                                    name="email"
+                                    placeholder="example@email.com"
+                                    autocomplete="email"
+                                    maxlength="120"
+                                    required
+                                >
+
+                                <small
+                                    class="contact-field-error"
+                                    id="contactEmailError"
+                                ></small>
+
+                            </div>
+
+
+                            <!-- SỐ ĐIỆN THOẠI -->
+
+                            <div class="contact-form-field">
+
+                                <label for="contactPhone">
+                                    Số điện thoại
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="contactPhone"
+                                    name="phone"
+                                    placeholder="Nhập số điện thoại"
+                                    autocomplete="tel"
+                                    maxlength="15"
+                                >
+
+                                <small
+                                    class="contact-field-error"
+                                    id="contactPhoneError"
+                                ></small>
+
+                            </div>
+
+
+                            <!-- CHỦ ĐỀ -->
+
+                            <div class="contact-form-field">
+
+                                <label for="contactTopic">
+                                    Chủ đề liên hệ
+                                </label>
+
+                                <select
+                                    id="contactTopic"
+                                    name="topic"
+                                    required
+                                >
+                                    <option value="">
+                                        Chọn chủ đề
+                                    </option>
+
+                                    <option value="product">
+                                        Tư vấn sản phẩm
+                                    </option>
+
+                                    <option value="technical">
+                                        Hỗ trợ kỹ thuật
+                                    </option>
+
+                                    <option value="account">
+                                        Tài khoản người dùng
+                                    </option>
+
+                                    <option value="partnership">
+                                        Hợp tác kinh doanh
+                                    </option>
+
+                                    <option value="feedback">
+                                        Góp ý website
+                                    </option>
+
+                                    <option value="other">
+                                        Nội dung khác
+                                    </option>
+                                </select>
+
+                                <small
+                                    class="contact-field-error"
+                                    id="contactTopicError"
+                                ></small>
+
+                            </div>
+
+
+                            <!-- TIÊU ĐỀ -->
+
+                            <div class="contact-form-field contact-form-full">
+
+                                <label for="contactSubject">
+                                    Tiêu đề yêu cầu
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="contactSubject"
+                                    name="subject"
+                                    placeholder="Nhập tiêu đề ngắn gọn"
+                                    maxlength="120"
+                                    required
+                                >
+
+                                <small
+                                    class="contact-field-error"
+                                    id="contactSubjectError"
+                                ></small>
+
+                            </div>
+
+
+                            <!-- NỘI DUNG -->
+
+                            <div class="contact-form-field contact-form-full">
+
+                                <label for="contactMessage">
+                                    Nội dung cần hỗ trợ
+                                </label>
+
+                                <textarea
+                                    id="contactMessage"
+                                    name="message"
+                                    rows="7"
+                                    maxlength="800"
+                                    placeholder="Mô tả rõ nội dung cần hỗ trợ..."
+                                    required
+                                ></textarea>
+
+                                <div class="contact-character-count">
+                                    <span id="contactCharacterCount">
+                                        0
+                                    </span>
+
+                                    <span>
+                                        / 800 ký tự
+                                    </span>
+                                </div>
+
+                                <small
+                                    class="contact-field-error"
+                                    id="contactMessageError"
+                                ></small>
+
+                            </div>
+
+
+                            <!-- PRIORITY -->
+
+                            <div class="contact-form-field contact-form-full">
+
+                                <span class="contact-field-title">
+                                    Mức độ ưu tiên
+                                </span>
+
+                                <div class="contact-priority-options">
+
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="contactPriority"
+                                            value="normal"
+                                            checked
+                                        >
+
+                                        <span>
+                                            <strong>
+                                                Thông thường
+                                            </strong>
+
+                                            <small>
+                                                Phản hồi theo thứ tự
+                                            </small>
+                                        </span>
+                                    </label>
+
+
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="contactPriority"
+                                            value="important"
+                                        >
+
+                                        <span>
+                                            <strong>
+                                                Quan trọng
+                                            </strong>
+
+                                            <small>
+                                                Cần xử lý sớm
+                                            </small>
+                                        </span>
+                                    </label>
+
+
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="contactPriority"
+                                            value="urgent"
+                                        >
+
+                                        <span>
+                                            <strong>
+                                                Khẩn cấp
+                                            </strong>
+
+                                            <small>
+                                                Cần phản hồi nhanh
+                                            </small>
+                                        </span>
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- MESSAGE -->
+
+                            <div
+                                class="auth-message hidden contact-form-full"
+                                id="contactFormMessage"
+                                role="alert"
+                            ></div>
+
+
+                            <!-- ACTIONS -->
+
+                            <div class="contact-form-actions contact-form-full">
+
+                                <button
+                                    type="button"
+                                    class="button button-outline"
+                                    id="resetContactButton"
+                                >
+                                    Nhập lại
+                                </button>
+
+                                <button
+                                    type="submit"
+                                    class="button button-primary"
+                                    id="submitContactButton"
+                                >
+                                    <span id="submitContactButtonText">
+                                        Gửi yêu cầu
+                                    </span>
+
+                                    <span
+                                        class="auth-button-loader hidden"
+                                        id="contactLoader"
+                                    ></span>
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+
+                    <!-- INFORMATION PANEL -->
+
+                    <aside class="contact-side-panel">
+
+                        <div class="contact-panel-header">
+
+                            <div>
+                                <span class="contact-panel-label">
+                                    SUPPORT INFORMATION
+                                </span>
+
+                                <h3>
+                                    Hỗ trợ nhanh
+                                </h3>
+                            </div>
+
+                            <span class="contact-side-status">
+                                ONLINE
+                            </span>
+
+                        </div>
+
+
+                        <div class="contact-side-content">
+
+                            <div class="contact-side-introduction">
+
+                                <div class="contact-side-logo">
+                                    AVM
+                                </div>
+
+                                <div>
+                                    <h4>
+                                        AVM Support Center
+                                    </h4>
+
+                                    <p>
+                                        Hệ thống tiếp nhận yêu cầu
+                                        và lưu trữ dữ liệu bằng Firebase.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="contact-support-list">
+
+                                <article>
+
+                                    <span class="contact-support-icon">
+                                        01
+                                    </span>
+
+                                    <div>
+                                        <h4>
+                                            Tư vấn sản phẩm
+                                        </h4>
+
+                                        <p>
+                                            Hỗ trợ tìm hiểu nhóm sản phẩm
+                                            theo đối tượng vật nuôi.
+                                        </p>
+                                    </div>
+
+                                </article>
+
+
+                                <article>
+
+                                    <span class="contact-support-icon">
+                                        02
+                                    </span>
+
+                                    <div>
+                                        <h4>
+                                            Hỗ trợ tài khoản
+                                        </h4>
+
+                                        <p>
+                                            Xử lý vấn đề đăng nhập,
+                                            đăng ký và dữ liệu người dùng.
+                                        </p>
+                                    </div>
+
+                                </article>
+
+
+                                <article>
+
+                                    <span class="contact-support-icon">
+                                        03
+                                    </span>
+
+                                    <div>
+                                        <h4>
+                                            Hợp tác kinh doanh
+                                        </h4>
+
+                                        <p>
+                                            Tiếp nhận thông tin từ đối tác,
+                                            đại lý và đơn vị phân phối.
+                                        </p>
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+
+                            <div class="contact-side-note">
+
+                                <span>
+                                    !
+                                </span>
+
+                                <p>
+                                    Với trường hợp sức khỏe vật nuôi nghiêm trọng,
+                                    hãy liên hệ trực tiếp bác sĩ thú y hoặc cơ sở
+                                    chuyên môn gần nhất.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FAQ
+        ================================================== -->
+
+        <section class="section contact-faq-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        FREQUENTLY ASKED QUESTIONS
+                    </p>
+
+                    <h2 class="section-title">
+                        Câu hỏi thường gặp
+                    </h2>
+
+                    <p class="section-description">
+                        Một số thông tin giúp người dùng
+                        sử dụng hệ thống thuận tiện hơn.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-faq-list">
+
+                    <article class="contact-faq-item">
+
+                        <button
+                            type="button"
+                            class="contact-faq-question"
+                            aria-expanded="false"
+                        >
+                            <span>
+                                Yêu cầu liên hệ được lưu ở đâu?
+                            </span>
+
+                            <span class="contact-faq-toggle">
+                                +
+                            </span>
+                        </button>
+
+                        <div class="contact-faq-answer">
+
+                            <p>
+                                Yêu cầu được lưu trong collection
+                                <strong>contactRequests</strong>
+                                của Cloud Firestore và gắn với tài khoản
+                                đang đăng nhập.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="contact-faq-item">
+
+                        <button
+                            type="button"
+                            class="contact-faq-question"
+                            aria-expanded="false"
+                        >
+                            <span>
+                                Tôi có thể gửi nhiều yêu cầu không?
+                            </span>
+
+                            <span class="contact-faq-toggle">
+                                +
+                            </span>
+                        </button>
+
+                        <div class="contact-faq-answer">
+
+                            <p>
+                                Có. Mỗi yêu cầu được lưu thành một document
+                                riêng để quản trị viên có thể theo dõi
+                                và xử lý độc lập.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="contact-faq-item">
+
+                        <button
+                            type="button"
+                            class="contact-faq-question"
+                            aria-expanded="false"
+                        >
+                            <span>
+                                Pet Support có thay thế bác sĩ thú y không?
+                            </span>
+
+                            <span class="contact-faq-toggle">
+                                +
+                            </span>
+                        </button>
+
+                        <div class="contact-faq-answer">
+
+                            <p>
+                                Không. Pet Support chỉ cung cấp gợi ý
+                                mang tính tham khảo và không thay thế
+                                chẩn đoán chuyên môn.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="contact-faq-item">
+
+                        <button
+                            type="button"
+                            class="contact-faq-question"
+                            aria-expanded="false"
+                        >
+                            <span>
+                                Bao lâu tôi sẽ nhận được phản hồi?
+                            </span>
+
+                            <span class="contact-faq-toggle">
+                                +
+                            </span>
+                        </button>
+
+                        <div class="contact-faq-answer">
+
+                            <p>
+                                Thời gian phản hồi dự kiến trong vòng 24 giờ,
+                                tùy theo nội dung và mức độ ưu tiên của yêu cầu.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <a
+                    href="./index.html"
+                    class="logo"
+                >
+                    <span class="logo-avm">
+                        AVM
+                    </span>
+
+                    <span class="logo-name">
+                        PET SHOP
+                    </span>
+                </a>
+
+                <p>
+                    Nền tảng giới thiệu và quản lý sản phẩm
+                    chăm sóc, phòng ngừa và hỗ trợ điều trị thú y.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Điều hướng
+                </h3>
+
+                <a href="./index.html">
+                    Trang chủ
+                </a>
+
+                <a href="./products.html">
+                    Sản phẩm
+                </a>
+
+                <a href="./api.html">
+                    API Demo
+                </a>
+
+                <a href="./support.html">
+                    Pet Support
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Hệ thống
+                </h3>
+
+                <a href="./admin.html">
+                    Quản trị
+                </a>
+
+                <a href="./contact.html">
+                    Liên hệ
+                </a>
+
+                <a href="./login.html">
+                    Đăng nhập
+                </a>
+
+                <a href="./register.html">
+                    Đăng ký
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Thông tin
+                </h3>
+
+                <p>
+                    Bình Dương, Việt Nam
+                </p>
+
+                <p>
+                    contact@avmpetshop.vn
+                </p>
+
+                <p>
+                    Hỗ trợ trực tuyến
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="currentYear">2026</span>
+                AVM Pet Shop. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="./js/main.js"></script>
+
+    <script
+        type="module"
+        src="./js/contact.js"
+    ></script>
+
+    <script
+        type="module"
+        src="./js/user-session.js"
+    ></script>
+<script>
+(function(){
+    if(!window.chatbase || window.chatbase("getState") !== "initialized"){
+        window.chatbase = (...args) => {
+            if(!window.chatbase.q){
+                window.chatbase.q = [];
+            }
+            window.chatbase.q.push(args);
+        };
+
+        window.chatbase = new Proxy(window.chatbase,{
+            get(target, prop){
+                if(prop === "q"){
+                    return target.q;
+                }
+                return (...args) => target(prop, ...args);
+            }
+        });
+    }
+
+    const onLoad = function(){
+        const script = document.createElement("script");
+
+        script.src = "https://www.chatbase.co/embed.min.js";
+        script.id = "1IsnsX9KFWC0lh9WnMgFv";
+        script.domain = "www.chatbase.co";
+
+        document.body.appendChild(script);
+    };
+
+    if(document.readyState === "complete"){
+        onLoad();
+    }else{
+        window.addEventListener("load", onLoad);
+    }
+})();
+</script>
+</body>
+</html>

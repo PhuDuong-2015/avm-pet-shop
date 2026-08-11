@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Đăng nhập hệ thống AVM Pet Shop."
+    >
+
+    <title>Đăng nhập | AVM Pet Shop</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="auth-page">
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header" id="header">
+
+        <div class="container header-container">
+
+            <a
+                href="./index.html"
+                class="logo"
+                aria-label="AVM Pet Shop"
+            >
+                <span class="logo-avm">AVM</span>
+                <span class="logo-name">PET SHOP</span>
+            </a>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Mở menu"
+                aria-expanded="false"
+                aria-controls="navbar"
+            >
+                ☰
+            </button>
+            <nav
+    class="navbar"
+    id="navbar"
+    aria-label="Điều hướng tài khoản"
+>
+    <a
+        href="./login.html"
+        class="nav-link guest-only-link active"
+        id="loginNavLink"
+        aria-current="page"
+    >
+        Đăng nhập
+    </a>
+
+    <a
+        href="./register.html"
+        class="nav-link guest-only-link"
+        id="registerNavLink"
+    >
+        Đăng ký
+    </a>
+
+    <a
+        href="./admin.html"
+        class="nav-link admin-only-link hidden"
+        id="adminPageLink"
+    >
+        Quản trị
+    </a>
+
+    <div
+        class="user-menu hidden"
+        id="userMenu"
+    >
+        <span
+            class="user-name"
+            id="userName"
+        >
+            Thành viên AVM
+        </span>
+
+        <button
+            type="button"
+            class="logout-button"
+            id="logoutButton"
+        >
+            Đăng xuất
+        </button>
+    </div>
+</nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="auth-main">
+
+        <section class="auth-section">
+
+            <div class="auth-background-grid"></div>
+
+            <div
+                class="auth-glow auth-glow-one"
+            ></div>
+
+            <div
+                class="auth-glow auth-glow-two"
+            ></div>
+
+            <div class="container auth-layout">
+
+                <!-- =================================================
+                     GIỚI THIỆU
+                ================================================== -->
+
+                <div class="auth-introduction">
+
+                    <p class="section-label">
+                        AVM SECURE ACCESS
+                    </p>
+
+                    <h1>
+                        Chào mừng bạn quay lại
+                    </h1>
+
+                    <p>
+                        Đăng nhập để quản lý hồ sơ,
+                        gửi yêu cầu tư vấn và sử dụng
+                        các chức năng dành riêng cho
+                        thành viên AVM.
+                    </p>
+
+                    <div class="auth-benefits">
+
+                        <article>
+
+                            <span>✓</span>
+
+                            <div>
+
+                                <strong>
+                                    Đăng nhập bảo mật
+                                </strong>
+
+                                <p>
+                                    Tài khoản được xác thực bằng
+                                    Firebase Authentication.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <article>
+
+                            <span>✓</span>
+
+                            <div>
+
+                                <strong>
+                                    Hồ sơ đồng bộ
+                                </strong>
+
+                                <p>
+                                    Thông tin thành viên được đọc
+                                    trực tiếp từ Cloud Firestore.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <article>
+
+                            <span>✓</span>
+
+                            <div>
+
+                                <strong>
+                                    Phân quyền tài khoản
+                                </strong>
+
+                                <p>
+                                    Hệ thống nhận biết người dùng
+                                    thông thường và quản trị viên.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     FORM ĐĂNG NHẬP
+                ================================================== -->
+
+                <div class="auth-card">
+
+                    <div class="auth-card-header">
+
+                        <span class="auth-card-icon">
+                            AVM
+                        </span>
+
+                        <div>
+
+                            <h2>
+                                Đăng nhập
+                            </h2>
+
+                            <p>
+                                Nhập email và mật khẩu đã đăng ký.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        class="auth-form"
+                        id="loginForm"
+                        method="post"
+                        novalidate
+                    >
+
+                        <!-- =========================================
+                             EMAIL
+                        ========================================== -->
+
+                        <div class="auth-field">
+
+                            <label for="loginEmail">
+                                Email
+                            </label>
+
+                            <div class="auth-input-wrapper">
+
+                                <span class="auth-input-icon">
+                                    @
+                                </span>
+
+                                <input
+                                    type="email"
+                                    id="loginEmail"
+                                    name="email"
+                                    placeholder="example@email.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                            <small
+                                class="auth-field-error"
+                                id="loginEmailError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- =========================================
+                             PASSWORD
+                        ========================================== -->
+
+                        <div class="auth-field">
+
+                            <label for="loginPassword">
+                                Mật khẩu
+                            </label>
+
+                            <div class="auth-input-wrapper">
+
+                                <span class="auth-input-icon">
+                                    ◈
+                                </span>
+
+                                <input
+                                    type="password"
+                                    id="loginPassword"
+                                    name="password"
+                                    placeholder="Nhập mật khẩu"
+                                    autocomplete="current-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    id="loginPasswordToggle"
+                                    aria-label="Hiện hoặc ẩn mật khẩu"
+                                >
+                                    Hiện
+                                </button>
+
+                            </div>
+
+                            <small
+                                class="auth-field-error"
+                                id="loginPasswordError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- =========================================
+                             LOGIN OPTIONS
+                        ========================================== -->
+
+                        <div class="login-options">
+
+                            <label
+                                class="auth-checkbox login-remember"
+                            >
+
+                                <input
+                                    type="checkbox"
+                                    id="rememberLogin"
+                                >
+
+                                <span>
+                                    Ghi nhớ đăng nhập
+                                </span>
+
+                            </label>
+
+                            <button
+                                type="button"
+                                class="forgot-password-button"
+                                id="forgotPasswordButton"
+                            >
+                                Quên mật khẩu?
+                            </button>
+
+                        </div>
+
+
+                        <!-- =========================================
+                             MESSAGE
+                        ========================================== -->
+
+                        <div
+                            class="auth-message hidden"
+                            id="loginMessage"
+                            role="alert"
+                        ></div>
+
+
+                        <!-- =========================================
+                             SUBMIT
+                        ========================================== -->
+
+                        <button
+                            type="submit"
+                            class="button button-primary auth-submit-button"
+                            id="loginButton"
+                        >
+
+                            <span id="loginButtonText">
+                                Đăng nhập
+                            </span>
+
+                            <span
+                                class="auth-button-loader hidden"
+                                id="loginLoader"
+                            ></span>
+
+                        </button>
+
+                    </form>
+
+
+                    <!-- =============================================
+                         REGISTER SWITCH
+                    ============================================== -->
+
+                    <div class="auth-switch">
+
+                        <span>
+                            Chưa có tài khoản?
+                        </span>
+
+                        <a href="./register.html">
+                            Đăng ký ngay
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-bottom">
+
+            <p>
+                ©
+                <span id="currentYear">
+                    2026
+                </span>
+                AVM Pet Shop.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="./js/main.js"></script>
+
+    <script
+        type="module"
+        src="./js/login.js"
+    ></script>
+
+    <script
+        type="module"
+        src="./js/user-session.js"
+    ></script>
+
+</body>
+</html>

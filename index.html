@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+>
+    <!-- =====================================================
+         DỰ ÁN CUỐI KHÓA - AVM PET SHOP
+         FILE: index.html
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AVM Pet Shop - Nền tảng giới thiệu, tìm kiếm và quản lý sản phẩm chăm sóc thú cưng hiện đại."
+    >
+
+    <meta
+        name="keywords"
+        content="AVM Pet Shop, thú cưng, chó, mèo, thức ăn thú cưng, API, Firebase, CRUD"
+    >
+
+    <meta name="author" content="AVM Pet Shop">
+
+    <meta name="theme-color" content="#020817">
+    <title>AVM Vet Care | Hệ thống thuốc thú y</title>
+
+    <!-- FILE CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <script
+    type="module"
+    src="./js/auth-guard.js"
+></script>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header" id="header">
+
+        <div class="container header-container">
+
+            <!-- LOGO -->
+            <a
+                href="./index.html"
+                class="logo"
+                aria-label="AVM Pet Shop - Trang chủ"
+            >
+                <span class="logo-avm">AVM</span>
+                <span class="logo-name">PET SHOP</span>
+            </a>
+
+
+            <!-- MENU MOBILE -->
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Mở menu điều hướng"
+                aria-expanded="false"
+                aria-controls="navbar"
+            >
+                ☰
+            </button>
+
+
+            <!-- NAVBAR -->
+           <nav
+    class="navbar"
+    id="navbar"
+    aria-label="Điều hướng chính"
+>
+    <a
+        href="./index.html"
+        class="nav-link active"
+        aria-current="page"
+    >
+        Trang chủ
+    </a>
+
+    <a
+        href="./products.html"
+        class="nav-link"
+    >
+        Sản phẩm
+    </a>
+
+    <a
+        href="./api.html"
+        class="nav-link"
+    >
+        API Demo
+    </a>
+
+    <a
+        href="./support.html"
+        class="nav-link"
+    >
+        Pet Support
+    </a>
+
+    <a
+        href="./contact.html"
+        class="nav-link"
+    >
+        Liên hệ
+    </a>
+
+    <a
+        href="./admin.html"
+        class="nav-link admin-only-link hidden"
+        id="adminPageLink"
+    >
+        Quản trị
+    </a>
+
+    <div
+        class="user-menu hidden"
+        id="userMenu"
+    >
+        <span
+            class="user-name"
+            id="userName"
+        >
+            Thành viên AVM
+        </span>
+
+        <button
+            type="button"
+            class="logout-button"
+            id="logoutButton"
+        >
+            Đăng xuất
+        </button>
+    </div>
+</nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main>
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-container">
+
+                <!-- NỘI DUNG BÊN TRÁI -->
+                <div class="hero-content">
+                    <p class="hero-label">
+    SMART VETERINARY PLATFORM
+</p>
+                    <h1 class="hero-title">
+                        AVM PET SHOP
+
+                        <span>
+                            Chăm sóc thú cưng thông minh
+                        </span>
+                    </h1>
+                    <p class="hero-welcome" id="welcomeMessage">
+    Chào mừng đến với hệ thống AVM!
+</p>
+<div class="hero-introduction">
+
+    <span class="hero-introduction-icon">
+        ✦
+    </span>
+
+    <p>
+        Website giới thiệu các sản phẩm hỗ trợ chăm sóc,
+        phòng ngừa và điều trị thú y, được thiết kế hiện đại,
+        rõ ràng và dễ sử dụng cho mọi người.
+    </p>
+
+</div>
+
+
+                    <!-- NÚT HÀNH ĐỘNG -->
+                    <div class="hero-actions">
+
+                        <a
+                            href="./products.html"
+                            class="button button-primary"
+                        >
+                            Khám phá sản phẩm
+                            <span aria-hidden="true">→</span>
+                        </a>
+
+                        <a
+                            href="./api.html"
+                            class="button button-outline"
+                        >
+                            Trải nghiệm API
+                        </a>
+
+                    </div>
+
+
+                    <!-- THÔNG TIN CÔNG NGHỆ -->
+                    <div
+                        class="hero-statistics"
+                        aria-label="Các công nghệ chính"
+                    >
+
+                        <article class="statistic-item">
+                            <strong>API LIVE</strong>
+                            <span>Dữ liệu trực tuyến</span>
+                        </article>
+
+                        <article class="statistic-item">
+                            <strong>FIREBASE</strong>
+                            <span>Xác thực bảo mật</span>
+                        </article>
+
+                        <article class="statistic-item">
+                            <strong>CRUD</strong>
+                            <span>Quản trị đầy đủ</span>
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     LINH VẬT CHÓ SHIBA
+                     KHÔNG CẦN FILE ẢNH
+                ========================================== -->
+
+                <div
+                    class="hero-visual"
+                    aria-label="Linh vật chó Shiba AVM Pet Shop"
+                >
+
+                    <div class="pet-showcase">
+
+                        <!-- VÒNG CHUYỂN ĐỘNG -->
+                        <div class="orbit orbit-one"></div>
+                        <div class="orbit orbit-two"></div>
+                        <div class="orbit orbit-three"></div>
+
+
+                        <!-- HẠT SÁNG -->
+                        <span class="spark spark-one"></span>
+                        <span class="spark spark-two"></span>
+                        <span class="spark spark-three"></span>
+                        <span class="spark spark-four"></span>
+
+
+                        <!-- LINH VẬT -->
+                        <div class="mascot-card">
+
+                            <svg
+                                class="pet-mascot"
+                                viewBox="0 0 600 600"
+                                role="img"
+                                aria-label="Chó Shiba hoạt hình AVM"
+                            >
+
+                                <defs>
+
+                                    <!-- VIỀN GRADIENT -->
+                                    <linearGradient
+                                        id="mainCircleGradient"
+                                        x1="0%"
+                                        y1="0%"
+                                        x2="100%"
+                                        y2="100%"
+                                    >
+                                        <stop
+                                            offset="0%"
+                                            stop-color="#18b8ff"
+                                        ></stop>
+
+                                        <stop
+                                            offset="48%"
+                                            stop-color="#75e1cf"
+                                        ></stop>
+
+                                        <stop
+                                            offset="100%"
+                                            stop-color="#ffd400"
+                                        ></stop>
+                                    </linearGradient>
+
+
+                                    <!-- MÀU LÔNG -->
+                                    <linearGradient
+                                        id="shibaFurGradient"
+                                        x1="20%"
+                                        y1="0%"
+                                        x2="80%"
+                                        y2="100%"
+                                    >
+                                        <stop
+                                            offset="0%"
+                                            stop-color="#f9b85d"
+                                        ></stop>
+
+                                        <stop
+                                            offset="55%"
+                                            stop-color="#e88a32"
+                                        ></stop>
+
+                                        <stop
+                                            offset="100%"
+                                            stop-color="#cc651e"
+                                        ></stop>
+                                    </linearGradient>
+
+
+                                    <!-- VÒNG CỔ -->
+                                    <linearGradient
+                                        id="collarGradient"
+                                        x1="0%"
+                                        y1="0%"
+                                        x2="100%"
+                                        y2="0%"
+                                    >
+                                        <stop
+                                            offset="0%"
+                                            stop-color="#18b8ff"
+                                        ></stop>
+
+                                        <stop
+                                            offset="100%"
+                                            stop-color="#087dc4"
+                                        ></stop>
+                                    </linearGradient>
+
+
+                                    <!-- NỀN -->
+                                    <radialGradient
+                                        id="backgroundGlow"
+                                        cx="50%"
+                                        cy="40%"
+                                        r="65%"
+                                    >
+                                        <stop
+                                            offset="0%"
+                                            stop-color="#123a61"
+                                        ></stop>
+
+                                        <stop
+                                            offset="100%"
+                                            stop-color="#061329"
+                                        ></stop>
+                                    </radialGradient>
+
+
+                                    <!-- GLOW -->
+                                    <filter id="softGlow">
+
+                                        <feGaussianBlur
+                                            stdDeviation="8"
+                                            result="blur"
+                                        ></feGaussianBlur>
+
+                                        <feMerge>
+                                            <feMergeNode in="blur"></feMergeNode>
+                                            <feMergeNode in="SourceGraphic"></feMergeNode>
+                                        </feMerge>
+
+                                    </filter>
+
+
+                                    <!-- BÓNG -->
+                                    <filter id="dogShadow">
+
+                                        <feDropShadow
+                                            dx="0"
+                                            dy="18"
+                                            stdDeviation="18"
+                                            flood-color="#000000"
+                                            flood-opacity="0.38"
+                                        ></feDropShadow>
+
+                                    </filter>
+
+                                </defs>
+
+
+                                <!-- NỀN TRÒN -->
+                                <circle
+                                    cx="300"
+                                    cy="300"
+                                    r="258"
+                                    fill="url(#backgroundGlow)"
+                                    stroke="url(#mainCircleGradient)"
+                                    stroke-width="9"
+                                ></circle>
+
+                                <circle
+                                    cx="300"
+                                    cy="300"
+                                    r="228"
+                                    fill="none"
+                                    stroke="#ffffff"
+                                    stroke-opacity="0.07"
+                                    stroke-width="2"
+                                    stroke-dasharray="10 18"
+                                ></circle>
+
+
+                                <!-- BÓNG DƯỚI LINH VẬT -->
+                                <ellipse
+                                    class="dog-shadow"
+                                    cx="300"
+                                    cy="492"
+                                    rx="142"
+                                    ry="26"
+                                    fill="#000000"
+                                    opacity="0.25"
+                                ></ellipse>
+
+
+                                <!-- THÂN -->
+                                <path
+                                    d="
+                                        M192 471
+                                        C197 404 235 367 300 367
+                                        C365 367 403 404 408 471
+                                        C372 505 228 505 192 471
+                                        Z
+                                    "
+                                    fill="url(#shibaFurGradient)"
+                                    filter="url(#dogShadow)"
+                                ></path>
+
+
+                                <!-- NGỰC TRẮNG -->
+                                <path
+                                    d="
+                                        M255 375
+                                        C267 405 279 425 300 446
+                                        C321 425 333 405 345 375
+                                        C330 366 316 362 300 362
+                                        C284 362 270 366 255 375
+                                        Z
+                                    "
+                                    fill="#fff1d8"
+                                ></path>
+
+
+                                <!-- TAI TRÁI -->
+                                <path
+                                    class="dog-ear dog-ear-left"
+                                    d="
+                                        M181 224
+                                        L204 91
+                                        Q210 65 228 92
+                                        L286 189
+                                        Z
+                                    "
+                                    fill="url(#shibaFurGradient)"
+                                    stroke="#bd571a"
+                                    stroke-width="5"
+                                    stroke-linejoin="round"
+                                ></path>
+
+                                <path
+                                    d="
+                                        M207 178
+                                        L217 112
+                                        Q220 99 229 113
+                                        L260 172
+                                        Z
+                                    "
+                                    fill="#f5978f"
+                                    opacity="0.78"
+                                ></path>
+
+
+                                <!-- TAI PHẢI -->
+                                <path
+                                    class="dog-ear dog-ear-right"
+                                    d="
+                                        M419 224
+                                        L396 91
+                                        Q390 65 372 92
+                                        L314 189
+                                        Z
+                                    "
+                                    fill="url(#shibaFurGradient)"
+                                    stroke="#bd571a"
+                                    stroke-width="5"
+                                    stroke-linejoin="round"
+                                ></path>
+
+                                <path
+                                    d="
+                                        M393 178
+                                        L383 112
+                                        Q380 99 371 113
+                                        L340 172
+                                        Z
+                                    "
+                                    fill="#f5978f"
+                                    opacity="0.78"
+                                ></path>
+
+
+                                <!-- ĐẦU -->
+                                <path
+                                    d="
+                                        M175 260
+                                        C175 173 228 127 300 127
+                                        C372 127 425 173 425 260
+                                        C425 350 377 406 300 406
+                                        C223 406 175 350 175 260
+                                        Z
+                                    "
+                                    fill="url(#shibaFurGradient)"
+                                    stroke="#bd571a"
+                                    stroke-width="5"
+                                    filter="url(#dogShadow)"
+                                ></path>
+
+
+                                <!-- TRÁN -->
+                                <path
+                                    d="
+                                        M245 145
+                                        Q300 119 355 145
+                                        Q337 169 300 175
+                                        Q263 169 245 145
+                                        Z
+                                    "
+                                    fill="#f6ae50"
+                                    opacity="0.78"
+                                ></path>
+
+
+                                <!-- MÁ TRÁI -->
+                                <path
+                                    d="
+                                        M184 279
+                                        C193 241 219 226 254 235
+                                        C251 284 258 321 282 352
+                                        C243 368 201 349 184 310
+                                        C179 298 178 288 184 279
+                                        Z
+                                    "
+                                    fill="#fff1d8"
+                                ></path>
+
+
+                                <!-- MÁ PHẢI -->
+                                <path
+                                    d="
+                                        M416 279
+                                        C407 241 381 226 346 235
+                                        C349 284 342 321 318 352
+                                        C357 368 399 349 416 310
+                                        C421 298 422 288 416 279
+                                        Z
+                                    "
+                                    fill="#fff1d8"
+                                ></path>
+
+
+                                <!-- MÕM -->
+                                <ellipse
+                                    cx="300"
+                                    cy="324"
+                                    rx="89"
+                                    ry="70"
+                                    fill="#fff4e2"
+                                ></ellipse>
+
+
+                                <!-- VÙNG LÔNG MẮT -->
+                                <path
+                                    d="
+                                        M204 226
+                                        Q240 199 272 226
+                                        Q242 242 209 239
+                                        Z
+                                    "
+                                    fill="#d97727"
+                                    opacity="0.62"
+                                ></path>
+
+                                <path
+                                    d="
+                                        M396 226
+                                        Q360 199 328 226
+                                        Q358 242 391 239
+                                        Z
+                                    "
+                                    fill="#d97727"
+                                    opacity="0.62"
+                                ></path>
+
+
+                                <!-- MẮT TRÁI -->
+                                <g class="dog-eye dog-eye-left">
+
+                                    <ellipse
+                                        cx="243"
+                                        cy="252"
+                                        rx="17"
+                                        ry="21"
+                                        fill="#101828"
+                                    ></ellipse>
+
+                                    <ellipse
+                                        cx="248"
+                                        cy="246"
+                                        rx="5"
+                                        ry="7"
+                                        fill="#ffffff"
+                                    ></ellipse>
+
+                                </g>
+
+
+                                <!-- MẮT PHẢI -->
+                                <g class="dog-eye dog-eye-right">
+
+                                    <ellipse
+                                        cx="357"
+                                        cy="252"
+                                        rx="17"
+                                        ry="21"
+                                        fill="#101828"
+                                    ></ellipse>
+
+                                    <ellipse
+                                        cx="362"
+                                        cy="246"
+                                        rx="5"
+                                        ry="7"
+                                        fill="#ffffff"
+                                    ></ellipse>
+
+                                </g>
+
+
+                                <!-- LÔNG MÀY -->
+                                <path
+                                    d="M221 219 Q244 204 267 218"
+                                    fill="none"
+                                    stroke="#723614"
+                                    stroke-width="8"
+                                    stroke-linecap="round"
+                                ></path>
+
+                                <path
+                                    d="M333 218 Q356 204 379 219"
+                                    fill="none"
+                                    stroke="#723614"
+                                    stroke-width="8"
+                                    stroke-linecap="round"
+                                ></path>
+
+
+                                <!-- MŨI -->
+                                <path
+                                    d="
+                                        M270 297
+                                        Q300 277 330 297
+                                        Q327 329 300 333
+                                        Q273 329 270 297
+                                        Z
+                                    "
+                                    fill="#101828"
+                                ></path>
+
+                                <ellipse
+                                    cx="288"
+                                    cy="297"
+                                    rx="8"
+                                    ry="5"
+                                    fill="#ffffff"
+                                    opacity="0.48"
+                                ></ellipse>
+
+
+                                <!-- MIỆNG KHÉP -->
+                                <path
+                                    d="
+                                        M300 330
+                                        C299 352 276 361 257 349
+                                    "
+                                    fill="none"
+                                    stroke="#442416"
+                                    stroke-width="8"
+                                    stroke-linecap="round"
+                                ></path>
+
+                                <path
+                                    d="
+                                        M300 330
+                                        C301 352 324 361 343 349
+                                    "
+                                    fill="none"
+                                    stroke="#442416"
+                                    stroke-width="8"
+                                    stroke-linecap="round"
+                                ></path>
+
+
+                                <!-- VÒNG CỔ -->
+                                <path
+                                    d="
+                                        M212 401
+                                        Q300 438 388 401
+                                    "
+                                    fill="none"
+                                    stroke="url(#collarGradient)"
+                                    stroke-width="22"
+                                    stroke-linecap="round"
+                                ></path>
+
+
+                                <!-- KHÓA VÒNG CỔ -->
+                                <rect
+                                    x="282"
+                                    y="413"
+                                    width="36"
+                                    height="27"
+                                    rx="7"
+                                    fill="#ffd400"
+                                ></rect>
+
+
+                                <!-- THẺ AVM -->
+                                <g class="dog-tag">
+
+                                    <circle
+                                        cx="300"
+                                        cy="454"
+                                        r="35"
+                                        fill="#ffd400"
+                                        stroke="#ffffff"
+                                        stroke-opacity="0.52"
+                                        stroke-width="4"
+                                        filter="url(#softGlow)"
+                                    ></circle>
+
+                                    <text
+                                        x="300"
+                                        y="463"
+                                        text-anchor="middle"
+                                        fill="#061329"
+                                        font-family="Arial, Helvetica, sans-serif"
+                                        font-size="25"
+                                        font-weight="900"
+                                    >
+                                        AVM
+                                    </text>
+
+                                </g>
+
+                            </svg>
+
+                        </div>
+
+
+                        <!-- THẺ THÔNG TIN -->
+                        <div class="pet-info-card info-card-top">
+
+                            <span class="info-card-icon">✓</span>
+
+                            <div>
+                                <strong>Sản phẩm chọn lọc</strong>
+                                <small>Minh bạch và đáng tin cậy</small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="pet-info-card info-card-bottom">
+
+                            <span class="info-card-icon">★</span>
+
+                            <div>
+                                <strong>Trải nghiệm hiện đại</strong>
+                                <small>Nhanh chóng và thuận tiện</small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             GIỚI THIỆU NỀN TẢNG
+        ================================================== -->
+
+        <section
+            class="section project-section"
+            id="project"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        NỀN TẢNG AVM
+                    </p>
+
+                    <h2 class="section-title">
+                        Một hệ thống được xây dựng bài bản
+                    </h2>
+
+                    <p class="section-description">
+                        AVM Pet Shop không chỉ là trang giới thiệu sản phẩm.
+                        Đây là nền tảng kết hợp dữ liệu, xác thực người dùng,
+                        quản trị nội dung và hỗ trợ khách hàng.
+                    </p>
+
+                </div>
+
+
+                <div class="project-grid">
+
+                    <article class="project-card">
+
+                        <div class="card-icon">◈</div>
+
+                        <h3>Danh mục chuyên nghiệp</h3>
+
+                        <p>
+                            Sản phẩm được tổ chức theo nhóm chó, mèo,
+                            dinh dưỡng, vệ sinh, sức khỏe và phụ kiện.
+                        </p>
+
+                    </article>
+
+
+                    <article class="project-card">
+
+                        <div class="card-icon">⌁</div>
+
+                        <h3>Dữ liệu API</h3>
+
+                        <p>
+                            Dữ liệu được tải và hiển thị tự động,
+                            hỗ trợ tìm kiếm, lọc và sắp xếp sản phẩm.
+                        </p>
+
+                    </article>
+
+
+                    <article class="project-card">
+
+                        <div class="card-icon">◇</div>
+
+                        <h3>Xác thực Firebase</h3>
+
+                        <p>
+                            Hệ thống đăng ký, đăng nhập và quản lý phiên
+                            người dùng bằng Firebase Authentication.
+                        </p>
+
+                    </article>
+
+
+                    <article class="project-card">
+
+                        <div class="card-icon">⚙</div>
+
+                        <h3>Quản trị CRUD</h3>
+
+                        <p>
+                            Quản trị viên có thể thêm, xem, chỉnh sửa,
+                            xóa và cập nhật trạng thái sản phẩm.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DANH MỤC SẢN PHẨM
+        ================================================== -->
+
+        <section
+            class="section category-section"
+            id="categories"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        HỆ SINH THÁI SẢN PHẨM
+                    </p>
+
+                    <h2 class="section-title">
+                        Đáp ứng đầy đủ nhu cầu chăm sóc thú cưng
+                    </h2>
+
+                    <p class="section-description">
+                        Khám phá các nhóm sản phẩm được bố trí rõ ràng,
+                        giúp người dùng lựa chọn nhanh và chính xác hơn.
+                    </p>
+
+                </div>
+
+
+                <div class="category-grid">
+
+                    <a
+                        href="./products.html?category=dog"
+                        class="category-card"
+                    >
+                        <span class="category-icon">🐕</span>
+
+                        <h3>Dành cho chó</h3>
+
+                        <p>
+                            Dinh dưỡng, vệ sinh và đồ dùng chuyên biệt.
+                        </p>
+                    </a>
+
+
+                    <a
+                        href="./products.html?category=cat"
+                        class="category-card"
+                    >
+                        <span class="category-icon">🐈</span>
+
+                        <h3>Dành cho mèo</h3>
+
+                        <p>
+                            Pate, thức ăn, cát vệ sinh và phụ kiện.
+                        </p>
+                    </a>
+
+
+                    <a
+                        href="./products.html?category=food"
+                        class="category-card"
+                    >
+                        <span class="category-icon">🥩</span>
+
+                        <h3>Dinh dưỡng</h3>
+
+                        <p>
+                            Thức ăn phù hợp với từng giai đoạn phát triển.
+                        </p>
+                    </a>
+
+
+                    <a
+                        href="./products.html?category=health"
+                        class="category-card"
+                    >
+                        <span class="category-icon">✚</span>
+
+                        <h3>Chăm sóc sức khỏe</h3>
+
+                        <p>
+                            Sản phẩm hỗ trợ sức khỏe và thể trạng.
+                        </p>
+                    </a>
+
+
+                    <a
+                        href="./products.html?category=accessory"
+                        class="category-card"
+                    >
+                        <span class="category-icon">◉</span>
+
+                        <h3>Phụ kiện</h3>
+
+                        <p>
+                            Đồ chơi, dây dắt và dụng cụ chăm sóc.
+                        </p>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             TÍNH NĂNG CHÍNH
+        ================================================== -->
+
+        <section
+            class="section feature-section"
+            id="features"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        CÔNG NGHỆ VÀ TÍNH NĂNG
+                    </p>
+
+                    <h2 class="section-title">
+                        Trải nghiệm đồng bộ và đáng tin cậy
+                    </h2>
+
+                    <p class="section-description">
+                        Các chức năng được thiết kế theo một luồng sử dụng
+                        rõ ràng, phù hợp cả khách hàng và quản trị viên.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-grid">
+
+                    <article class="feature-card">
+
+                        <span class="feature-number">01</span>
+
+                        <h3>Danh sách sản phẩm</h3>
+
+                        <p>
+                            Hiển thị dữ liệu, giá bán, mô tả,
+                            danh mục và trạng thái sản phẩm.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <span class="feature-number">02</span>
+
+                        <h3>Tìm kiếm thông minh</h3>
+
+                        <p>
+                            Tìm sản phẩm theo tên, nhóm sản phẩm
+                            và khoảng giá phù hợp.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <span class="feature-number">03</span>
+
+                        <h3>Tài khoản người dùng</h3>
+
+                        <p>
+                            Đăng ký, đăng nhập và đăng xuất
+                            thông qua Firebase Authentication.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <span class="feature-number">04</span>
+
+                        <h3>Trang quản trị</h3>
+
+                        <p>
+                            Kiểm soát sản phẩm, nội dung và trạng thái
+                            hiển thị trên hệ thống.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <span class="feature-number">05</span>
+
+                        <h3>API thời gian thực</h3>
+
+                        <p>
+                            Kết nối API, xử lý JSON và cập nhật
+                            dữ liệu trực tiếp trên giao diện.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <span class="feature-number">06</span>
+
+                        <h3>Pet Support</h3>
+
+                        <p>
+                            Hỗ trợ người dùng lựa chọn nhóm sản phẩm
+                            phù hợp với nhu cầu chăm sóc thú cưng.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CTA
+        ================================================== -->
+
+        <section class="cta-section">
+
+            <div class="container cta-container">
+
+                <div>
+
+                    <p class="section-label">
+                        AVM PET SHOP
+                    </p>
+
+                    <h2>
+                        Khám phá nền tảng chăm sóc thú cưng hiện đại
+                    </h2>
+
+                    <p>
+                        Truy cập danh mục sản phẩm, kiểm tra dữ liệu API
+                        và trải nghiệm các chức năng chính của hệ thống.
+                    </p>
+
+                </div>
+
+                <a
+                    href="./products.html"
+                    class="button button-primary"
+                >
+                    Bắt đầu khám phá
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <a
+                    href="./index.html"
+                    class="logo"
+                >
+                    <span class="logo-avm">AVM</span>
+                    <span class="logo-name">PET SHOP</span>
+                </a>
+
+                <p>
+                    Dự án cuối khóa xây dựng nền tảng chăm sóc thú cưng
+                    bằng HTML, CSS, JavaScript, API và Firebase.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Điều hướng</h3>
+
+                <a href="./index.html">
+                    Trang chủ
+                </a>
+
+                <a href="./products.html">
+                    Sản phẩm
+                </a>
+
+                <a href="./api.html">
+                    API Demo
+                </a>
+
+                <a href="./support.html">
+                    Pet Support
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Hệ thống</h3>
+
+                <a href="./login.html">
+                    Đăng nhập
+                </a>
+
+                <a href="./register.html">
+                    Đăng ký
+                </a>
+
+                <a href="./admin.html">
+                    Trang quản trị
+                </a>
+
+                <a href="./contact.html">
+                    Liên hệ
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Thông tin</h3>
+
+                <p>
+                    Bình Dương, Việt Nam
+                </p>
+
+                <p>
+                    contact@avmpetshop.vn
+                </p>
+
+                <p>
+                    Hỗ trợ trực tuyến
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="currentYear">2026</span>
+                AVM Pet Shop. Dự Án Cuối Khóa.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         NÚT PET SUPPORT
+    ====================================================== -->
+
+
+
+
+    <!-- FILE JAVASCRIPT -->
+    <script src="./js/main.js"></script>
+    <script
+    type="module"
+    src="./js/user-session.js"
+></script>
+    <script src="./js/main.js"></script>
+    <!-- AVM PET AI - CHATBASE -->
+<script>
+(function(){
+    if(!window.chatbase || window.chatbase("getState") !== "initialized"){
+        window.chatbase = (...args) => {
+            if(!window.chatbase.q){
+                window.chatbase.q = [];
+            }
+            window.chatbase.q.push(args);
+        };
+
+        window.chatbase = new Proxy(window.chatbase,{
+            get(target, prop){
+                if(prop === "q"){
+                    return target.q;
+                }
+                return (...args) => target(prop, ...args);
+            }
+        });
+    }
+
+    const onLoad = function(){
+        const script = document.createElement("script");
+
+        script.src = "https://www.chatbase.co/embed.min.js";
+        script.id = "1IsnsX9KFWC0lh9WnMgFv";
+        script.domain = "www.chatbase.co";
+
+        document.body.appendChild(script);
+    };
+
+    if(document.readyState === "complete"){
+        onLoad();
+    }else{
+        window.addEventListener("load", onLoad);
+    }
+})();
+</script>
+</body>
+</html>

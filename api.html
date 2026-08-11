@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- =====================================================
+         AVM PET SHOP
+         TRANG API DEMO
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Trang minh họa cách hệ thống AVM tải dữ liệu sản phẩm thú y bằng JavaScript Fetch API."
+    >
+
+    <meta
+        name="keywords"
+        content="AVM Pet Shop, API sản phẩm, Fetch API, JavaScript, JSON, thuốc thú y"
+    >
+
+    <meta name="theme-color" content="#020817">
+
+    <title>API Demo | AVM Pet Shop</title>
+
+
+    <!-- =====================================================
+         FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="./css/style.css"
+    >
+
+
+    <!-- =====================================================
+         KIỂM TRA ĐĂNG NHẬP
+    ====================================================== -->
+
+    <script
+        type="module"
+        src="./js/auth-guard.js"
+    ></script>
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header
+        class="header"
+        id="header"
+    >
+
+        <div class="container header-container">
+
+            <!-- LOGO -->
+
+            <a
+                href="./index.html"
+                class="logo"
+                aria-label="AVM Pet Shop"
+            >
+                <span class="logo-avm">
+                    AVM
+                </span>
+
+                <span class="logo-name">
+                    PET SHOP
+                </span>
+            </a>
+
+
+            <!-- MENU MOBILE -->
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Mở menu điều hướng"
+                aria-expanded="false"
+                aria-controls="navbar"
+            >
+                ☰
+            </button>
+
+
+            <!-- NAVBAR -->
+
+            <nav
+                class="navbar"
+                id="navbar"
+                aria-label="Điều hướng chính"
+            >
+
+                <a
+                    href="./index.html"
+                    class="nav-link"
+                >
+                    Trang chủ
+                </a>
+
+
+                <a
+                    href="./products.html"
+                    class="nav-link"
+                >
+                    Sản phẩm
+                </a>
+
+
+                <a
+                    href="./api.html"
+                    class="nav-link active"
+                    aria-current="page"
+                >
+                    API Demo
+                </a>
+
+
+                <a
+                    href="./support.html"
+                    class="nav-link"
+                >
+                    Pet Support
+                </a>
+
+
+                <a
+                    href="./contact.html"
+                    class="nav-link"
+                >
+                    Liên hệ
+                </a>
+
+
+                <!-- CHỈ ADMIN MỚI THẤY -->
+
+                <a
+                    href="./admin.html"
+                    class="nav-link admin-only-link hidden"
+                    id="adminPageLink"
+                >
+                    Quản trị
+                </a>
+
+
+                <!-- MENU NGƯỜI DÙNG -->
+
+                <div
+                    class="user-menu hidden"
+                    id="userMenu"
+                >
+
+                    <span
+                        class="user-name"
+                        id="userName"
+                    >
+                        Thành viên AVM
+                    </span>
+
+
+                    <button
+                        type="button"
+                        class="logout-button"
+                        id="logoutButton"
+                    >
+                        Đăng xuất
+                    </button>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+        <!-- =================================================
+             HERO API
+        ================================================== -->
+
+        <section class="api-page-hero">
+
+            <div class="container api-hero-container">
+
+                <!-- NỘI DUNG -->
+
+                <div class="api-hero-content">
+
+                    <p class="section-label">
+                        JAVASCRIPT FETCH API
+                    </p>
+
+
+                    <h1>
+                        Kết nối dữ liệu sản phẩm thú y
+                    </h1>
+
+
+                    <p>
+                        Trang này minh họa cách hệ thống AVM tải dữ liệu
+                        sản phẩm từ tệp JSON bằng Fetch API, kiểm tra
+                        trạng thái phản hồi và hiển thị dữ liệu tự động
+                        trên giao diện.
+                    </p>
+
+
+                    <div class="api-hero-actions">
+
+                        <a
+                            href="#apiConsole"
+                            class="button button-primary"
+                        >
+                            Chạy API Demo
+
+                            <span aria-hidden="true">
+                                ↓
+                            </span>
+                        </a>
+
+
+                        <a
+                            href="./products.html"
+                            class="button button-outline"
+                        >
+                            Xem sản phẩm
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MINH HỌA API -->
+
+                <div
+                    class="api-hero-visual"
+                    aria-hidden="true"
+                >
+
+                    <div class="api-orbit api-orbit-one"></div>
+
+                    <div class="api-orbit api-orbit-two"></div>
+
+
+                    <div class="api-core">
+
+                        <div class="api-core-label">
+                            API
+                        </div>
+
+
+                        <span class="api-node api-node-json">
+                            JSON
+                        </span>
+
+
+                        <span class="api-node api-node-fetch">
+                            FETCH
+                        </span>
+
+
+                        <span class="api-node api-node-data">
+                            DATA
+                        </span>
+
+
+                        <span class="api-node api-node-live">
+                            LIVE
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             QUY TRÌNH API
+        ================================================== -->
+
+        <section class="api-overview-section">
+
+            <div class="container">
+
+                <div class="api-overview-grid">
+
+                    <article class="api-overview-card">
+
+                        <span class="api-overview-number">
+                            01
+                        </span>
+
+
+                        <div class="api-overview-icon">
+                            →
+                        </div>
+
+
+                        <h2>
+                            Gửi yêu cầu
+                        </h2>
+
+
+                        <p>
+                            JavaScript gửi yêu cầu đến nguồn dữ liệu
+                            sản phẩm của hệ thống.
+                        </p>
+
+                    </article>
+
+
+                    <article class="api-overview-card">
+
+                        <span class="api-overview-number">
+                            02
+                        </span>
+
+
+                        <div class="api-overview-icon">
+                            JSON
+                        </div>
+
+
+                        <h2>
+                            Nhận dữ liệu
+                        </h2>
+
+
+                        <p>
+                            Dữ liệu được nhận dưới định dạng JSON
+                            và kiểm tra trước khi sử dụng.
+                        </p>
+
+                    </article>
+
+
+                    <article class="api-overview-card">
+
+                        <span class="api-overview-number">
+                            03
+                        </span>
+
+
+                        <div class="api-overview-icon">
+                            ✓
+                        </div>
+
+
+                        <h2>
+                            Hiển thị sản phẩm
+                        </h2>
+
+
+                        <p>
+                            JavaScript tự động tạo bảng sản phẩm
+                            trên giao diện website.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             API CONSOLE
+        ================================================== -->
+
+        <section
+            class="section api-console-section"
+            id="apiConsole"
+        >
+
+            <div class="container">
+
+                <!-- SECTION HEADER -->
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        API CONSOLE
+                    </p>
+
+
+                    <h2 class="section-title">
+                        Kiểm tra dữ liệu trực tiếp
+                    </h2>
+
+
+                    <p class="section-description">
+                        Nhấn nút gửi yêu cầu để tải dữ liệu
+                        từ file products.json.
+                    </p>
+
+                </div>
+
+
+                <div class="api-console-layout">
+
+                    <!-- =================================================
+                         CONTROL PANEL
+                    ================================================== -->
+
+                    <div class="api-control-panel">
+
+                        <div class="api-panel-header">
+
+                            <div>
+
+                                <span class="api-panel-label">
+                                    REQUEST CONTROL
+                                </span>
+
+
+                                <h3>
+                                    Cấu hình yêu cầu
+                                </h3>
+
+                            </div>
+
+
+                            <span
+                                class="api-connection-status status-idle"
+                                id="apiConnectionStatus"
+                            >
+                                Chưa kết nối
+                            </span>
+
+                        </div>
+
+
+                        <!-- ENDPOINT -->
+
+                        <div class="api-field-group">
+
+                            <label for="apiEndpoint">
+                                API Endpoint
+                            </label>
+
+
+                            <div class="api-endpoint-box">
+
+                                <span class="api-method">
+                                    GET
+                                </span>
+
+
+                                <input
+                                    type="text"
+                                    id="apiEndpoint"
+                                    value="./data/products.json"
+                                    readonly
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- REQUEST INFO -->
+
+                        <div class="api-request-information">
+
+                            <div>
+
+                                <span>
+                                    Phương thức
+                                </span>
+
+                                <strong>
+                                    GET
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Kiểu dữ liệu
+                                </span>
+
+                                <strong>
+                                    JSON
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Bộ nhớ đệm
+                                </span>
+
+                                <strong>
+                                    No Store
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- BUTTONS -->
+
+                        <div class="api-control-actions">
+
+                            <button
+                                type="button"
+                                class="button button-primary"
+                                id="sendApiRequestButton"
+                            >
+                                Gửi yêu cầu
+
+                                <span aria-hidden="true">
+                                    →
+                                </span>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="button button-outline"
+                                id="clearApiResultButton"
+                            >
+                                Xóa kết quả
+                            </button>
+
+                        </div>
+
+
+                        <!-- STATUS -->
+
+                        <div class="api-status-list">
+
+                            <div class="api-status-item">
+
+                                <span>
+                                    Trạng thái HTTP
+                                </span>
+
+
+                                <strong id="apiHttpStatus">
+                                    ---
+                                </strong>
+
+                            </div>
+
+
+                            <div class="api-status-item">
+
+                                <span>
+                                    Thời gian phản hồi
+                                </span>
+
+
+                                <strong id="apiResponseTime">
+                                    ---
+                                </strong>
+
+                            </div>
+
+
+                            <div class="api-status-item">
+
+                                <span>
+                                    Số bản ghi
+                                </span>
+
+
+                                <strong id="apiRecordCount">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         JSON VIEWER
+                    ================================================== -->
+
+                    <div class="api-json-panel">
+
+                        <div class="api-panel-header">
+
+                            <div>
+
+                                <span class="api-panel-label">
+                                    RESPONSE VIEWER
+                                </span>
+
+
+                                <h3>
+                                    Dữ liệu JSON
+                                </h3>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="api-copy-button"
+                                id="copyJsonButton"
+                                disabled
+                            >
+                                Sao chép
+                            </button>
+
+                        </div>
+
+
+                        <!-- LOADING -->
+
+                        <div
+                            class="api-loading hidden"
+                            id="apiLoading"
+                        >
+
+                            <div class="loading-ring"></div>
+
+
+                            <p>
+                                Đang gửi yêu cầu...
+                            </p>
+
+                        </div>
+
+
+                        <!-- JSON -->
+
+                        <pre
+                            class="api-json-viewer"
+                            id="apiJsonViewer"
+                            aria-live="polite"
+                        ><code>{
+    "message": "Nhấn Gửi yêu cầu để tải dữ liệu",
+    "endpoint": "./data/products.json"
+}</code></pre>
+
+
+                        <!-- ERROR -->
+
+                        <div
+                            class="api-error-message hidden"
+                            id="apiErrorMessage"
+                        >
+
+                            <span aria-hidden="true">
+                                !
+                            </span>
+
+
+                            <div>
+
+                                <strong>
+                                    Không thể tải dữ liệu
+                                </strong>
+
+
+                                <p id="apiErrorText">
+                                    Vui lòng kiểm tra đường dẫn API.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             BẢNG DỮ LIỆU
+        ================================================== -->
+
+        <section class="section api-data-section">
+
+            <div class="container">
+
+                <!-- HEADER -->
+
+                <div class="api-data-header">
+
+                    <div>
+
+                        <p class="section-label">
+                            API RESPONSE DATA
+                        </p>
+
+
+                        <h2 class="section-title">
+                            Dữ liệu sản phẩm đã nhận
+                        </h2>
+
+
+                        <p class="section-description">
+                            Bảng dưới đây được tạo tự động
+                            từ dữ liệu API.
+                        </p>
+
+                    </div>
+
+
+                    <div class="api-data-count">
+
+                        <span>
+                            Tổng bản ghi
+                        </span>
+
+
+                        <strong id="apiTableCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TABLE -->
+
+                <div class="api-table-wrapper">
+
+                    <table class="api-data-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    ID
+                                </th>
+
+                                <th>
+                                    Sản phẩm
+                                </th>
+
+                                <th>
+                                    Danh mục
+                                </th>
+
+                                <th>
+                                    Vật nuôi
+                                </th>
+
+                                <th>
+                                    Giá
+                                </th>
+
+                                <th>
+                                    Trạng thái
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="apiTableBody">
+
+                            <tr class="api-table-empty-row">
+
+                                <td colspan="6">
+
+                                    <div class="api-table-empty">
+
+                                        <span>
+                                            ◇
+                                        </span>
+
+
+                                        <p>
+                                            Chưa có dữ liệu.
+                                            Hãy gửi yêu cầu API.
+                                        </p>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CTA
+        ================================================== -->
+
+        <section class="cta-section">
+
+            <div class="container cta-container">
+
+                <div>
+
+                    <p class="section-label">
+                        AVM PRODUCTS
+                    </p>
+
+
+                    <h2>
+                        Xem dữ liệu được áp dụng vào trang sản phẩm
+                    </h2>
+
+
+                    <p>
+                        Danh sách sản phẩm được tạo tự động
+                        từ dữ liệu JSON thông qua JavaScript.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="./products.html"
+                    class="button button-primary"
+                >
+                    Mở trang sản phẩm
+
+                    <span aria-hidden="true">
+                        →
+                    </span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+                <a
+                    href="./index.html"
+                    class="logo"
+                >
+                    <span class="logo-avm">
+                        AVM
+                    </span>
+
+
+                    <span class="logo-name">
+                        PET SHOP
+                    </span>
+                </a>
+
+
+                <p>
+                    Nền tảng giới thiệu và quản lý sản phẩm
+                    chăm sóc, phòng ngừa và hỗ trợ điều trị thú y.
+                </p>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Điều hướng
+                </h3>
+
+
+                <a href="./index.html">
+                    Trang chủ
+                </a>
+
+
+                <a href="./products.html">
+                    Sản phẩm
+                </a>
+
+
+                <a href="./api.html">
+                    API Demo
+                </a>
+
+
+                <a href="./support.html">
+                    Pet Support
+                </a>
+
+            </div>
+
+
+            <!-- SYSTEM -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Hệ thống
+                </h3>
+
+
+                <a href="./admin.html">
+                    Quản trị
+                </a>
+
+
+                <a href="./contact.html">
+                    Liên hệ
+                </a>
+
+
+                <a href="./login.html">
+                    Đăng nhập
+                </a>
+
+
+                <a href="./register.html">
+                    Đăng ký
+                </a>
+
+            </div>
+
+
+            <!-- INFORMATION -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Thông tin
+                </h3>
+
+
+                <p>
+                    Bình Dương, Việt Nam
+                </p>
+
+
+                <p>
+                    contact@avmpetshop.vn
+                </p>
+
+
+                <p>
+                    Hỗ trợ trực tuyến
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="currentYear">2026</span>
+                AVM Pet Shop. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="./js/main.js"></script>
+
+
+    <!-- CHỈ GỌI API.JS TẠI TRANG NÀY -->
+
+    <script src="./js/api.js"></script>
+
+
+    <!-- PHIÊN ĐĂNG NHẬP VÀ QUYỀN ADMIN -->
+
+    <script
+        type="module"
+        src="./js/user-session.js"
+    ></script>
+<script>
+(function(){
+    if(!window.chatbase || window.chatbase("getState") !== "initialized"){
+        window.chatbase = (...args) => {
+            if(!window.chatbase.q){
+                window.chatbase.q = [];
+            }
+            window.chatbase.q.push(args);
+        };
+
+        window.chatbase = new Proxy(window.chatbase,{
+            get(target, prop){
+                if(prop === "q"){
+                    return target.q;
+                }
+                return (...args) => target(prop, ...args);
+            }
+        });
+    }
+
+    const onLoad = function(){
+        const script = document.createElement("script");
+
+        script.src = "https://www.chatbase.co/embed.min.js";
+        script.id = "1IsnsX9KFWC0lh9WnMgFv";
+        script.domain = "www.chatbase.co";
+
+        document.body.appendChild(script);
+    };
+
+    if(document.readyState === "complete"){
+        onLoad();
+    }else{
+        window.addEventListener("load", onLoad);
+    }
+})();
+</script>
+</body>
+</html>

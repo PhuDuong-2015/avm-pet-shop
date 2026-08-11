@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Đăng ký tài khoản AVM Pet Shop."
+    >
+
+    <title>Đăng ký | AVM Pet Shop</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="auth-page">
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header" id="header">
+
+        <div class="container header-container">
+
+            <a
+                href="./index.html"
+                class="logo"
+                aria-label="AVM Pet Shop"
+            >
+                <span class="logo-avm">AVM</span>
+                <span class="logo-name">PET SHOP</span>
+            </a>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Mở menu"
+                aria-expanded="false"
+                aria-controls="navbar"
+            >
+                ☰
+            </button>
+            <nav
+    class="navbar"
+    id="navbar"
+    aria-label="Điều hướng tài khoản"
+>
+    <a
+        href="./login.html"
+        class="nav-link guest-only-link"
+        id="loginNavLink"
+    >
+        Đăng nhập
+    </a>
+
+    <a
+        href="./register.html"
+        class="nav-link guest-only-link active"
+        id="registerNavLink"
+        aria-current="page"
+    >
+        Đăng ký
+    </a>
+
+    <a
+        href="./admin.html"
+        class="nav-link admin-only-link hidden"
+        id="adminPageLink"
+    >
+        Quản trị
+    </a>
+
+    <div
+        class="user-menu hidden"
+        id="userMenu"
+    >
+        <span
+            class="user-name"
+            id="userName"
+        >
+            Thành viên AVM
+        </span>
+
+        <button
+            type="button"
+            class="logout-button"
+            id="logoutButton"
+        >
+            Đăng xuất
+        </button>
+    </div>
+</nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="auth-main">
+
+        <section class="auth-section">
+
+            <div class="auth-background-grid"></div>
+
+            <div
+                class="auth-glow auth-glow-one"
+            ></div>
+
+            <div
+                class="auth-glow auth-glow-two"
+            ></div>
+
+            <div class="container auth-layout">
+
+                <!-- =================================================
+                     INTRODUCTION
+                ================================================== -->
+
+                <div class="auth-introduction">
+
+                    <p class="section-label">
+                        AVM MEMBER ACCESS
+                    </p>
+
+                    <h1>
+                        Tạo tài khoản AVM
+                    </h1>
+
+                    <p>
+                        Đăng ký tài khoản để sử dụng Pet Support,
+                        gửi yêu cầu tư vấn và trải nghiệm đầy đủ
+                        các chức năng của AVM Pet Shop.
+                    </p>
+
+                    <div class="auth-benefits">
+
+                        <article>
+
+                            <span>✓</span>
+
+                            <div>
+
+                                <strong>
+                                    Tạo tài khoản nhanh
+                                </strong>
+
+                                <p>
+                                    Đăng ký bằng email và mật khẩu
+                                    thông qua Firebase Authentication.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <article>
+
+                            <span>✓</span>
+
+                            <div>
+
+                                <strong>
+                                    Lưu hồ sơ thành viên
+                                </strong>
+
+                                <p>
+                                    Thông tin tài khoản được lưu
+                                    trong Cloud Firestore.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <article>
+
+                            <span>✓</span>
+
+                            <div>
+
+                                <strong>
+                                    Hệ thống phân quyền
+                                </strong>
+
+                                <p>
+                                    Tài khoản mới mặc định được tạo
+                                    với quyền người dùng thông thường.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     REGISTER CARD
+                ================================================== -->
+
+                <div class="auth-card">
+
+                    <div class="auth-card-header">
+
+                        <span class="auth-card-icon">
+                            AVM
+                        </span>
+
+                        <div>
+
+                            <h2>
+                                Đăng ký
+                            </h2>
+
+                            <p>
+                                Tạo tài khoản thành viên AVM Pet Shop.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        class="auth-form"
+                        id="registerForm"
+                        method="post"
+                        novalidate
+                    >
+
+                        <!-- =========================================
+                             FULL NAME
+                        ========================================== -->
+
+                        <div class="auth-field">
+
+                            <label for="registerFullName">
+                                Họ và tên
+                            </label>
+
+                            <div class="auth-input-wrapper">
+
+                                <span class="auth-input-icon">
+                                    ◇
+                                </span>
+
+                                <input
+                                    type="text"
+                                    id="registerFullName"
+                                    name="fullName"
+                                    placeholder="Nhập họ và tên"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+                            <small
+                                class="auth-field-error"
+                                id="registerFullNameError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- =========================================
+                             EMAIL
+                        ========================================== -->
+
+                        <div class="auth-field">
+
+                            <label for="registerEmail">
+                                Email
+                            </label>
+
+                            <div class="auth-input-wrapper">
+
+                                <span class="auth-input-icon">
+                                    @
+                                </span>
+
+                                <input
+                                    type="email"
+                                    id="registerEmail"
+                                    name="email"
+                                    placeholder="example@email.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                            <small
+                                class="auth-field-error"
+                                id="registerEmailError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- =========================================
+                             PASSWORD
+                        ========================================== -->
+
+                        <div class="auth-field">
+
+                            <label for="registerPassword">
+                                Mật khẩu
+                            </label>
+
+                            <div class="auth-input-wrapper">
+
+                                <span class="auth-input-icon">
+                                    ◈
+                                </span>
+
+                                <input
+                                    type="password"
+                                    id="registerPassword"
+                                    name="password"
+                                    placeholder="Tạo mật khẩu"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    id="registerPasswordToggle"
+                                    aria-label="Hiện hoặc ẩn mật khẩu"
+                                >
+                                    Hiện
+                                </button>
+
+                            </div>
+
+                            <small
+                                class="auth-field-error"
+                                id="registerPasswordError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- =========================================
+                             CONFIRM PASSWORD
+                        ========================================== -->
+
+                        <div class="auth-field">
+
+                            <label for="registerConfirmPassword">
+                                Nhập lại mật khẩu
+                            </label>
+
+                            <div class="auth-input-wrapper">
+
+                                <span class="auth-input-icon">
+                                    ◈
+                                </span>
+
+                                <input
+                                    type="password"
+                                    id="registerConfirmPassword"
+                                    name="confirmPassword"
+                                    placeholder="Nhập lại mật khẩu"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    id="registerConfirmPasswordToggle"
+                                    aria-label="Hiện hoặc ẩn mật khẩu xác nhận"
+                                >
+                                    Hiện
+                                </button>
+
+                            </div>
+
+                            <small
+                                class="auth-field-error"
+                                id="registerConfirmPasswordError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- =========================================
+                             TERMS
+                        ========================================== -->
+
+                        <label class="auth-checkbox">
+
+                            <input
+                                type="checkbox"
+                                id="registerTerms"
+                            >
+
+                            <span>
+                                Tôi đồng ý với điều khoản sử dụng
+                                và chính sách của AVM Pet Shop.
+                            </span>
+
+                        </label>
+
+                        <small
+                            class="auth-field-error"
+                            id="registerTermsError"
+                        ></small>
+
+
+                        <!-- =========================================
+                             MESSAGE
+                        ========================================== -->
+
+                        <div
+                            class="auth-message hidden"
+                            id="registerMessage"
+                            role="alert"
+                        ></div>
+
+
+                        <!-- =========================================
+                             SUBMIT
+                        ========================================== -->
+
+                        <button
+                            type="submit"
+                            class="button button-primary auth-submit-button"
+                            id="registerButton"
+                        >
+
+                            <span id="registerButtonText">
+                                Tạo tài khoản
+                            </span>
+
+                            <span
+                                class="auth-button-loader hidden"
+                                id="registerLoader"
+                            ></span>
+
+                        </button>
+
+                    </form>
+
+
+                    <!-- =============================================
+                         LOGIN SWITCH
+                    ============================================== -->
+
+                    <div class="auth-switch">
+
+                        <span>
+                            Đã có tài khoản?
+                        </span>
+
+                        <a href="./login.html">
+                            Đăng nhập ngay
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-bottom">
+
+            <p>
+                ©
+                <span id="currentYear">
+                    2026
+                </span>
+                AVM Pet Shop.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="./js/main.js"></script>
+
+    <script
+        type="module"
+        src="./js/register.js"
+    ></script>
+
+    <script
+        type="module"
+        src="./js/user-session.js"
+    ></script>
+
+</body>
+</html>

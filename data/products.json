@@ -1,0 +1,263 @@
+[
+  {
+    "id": 1,
+    "name": "AVM Digestive Pro",
+    "category": "digestive",
+    "categoryName": "Tiêu hóa",
+    "animal": [
+      "dog",
+      "cat"
+    ],
+    "animalName": "Chó, mèo",
+    "price": 185000,
+    "status": "in-stock",
+    "statusName": "Còn hàng",
+    "description": "Hỗ trợ cân bằng hệ vi sinh đường ruột và cải thiện hấp thu dinh dưỡng.",
+    "symbol": "DP",
+    "accent": "blue"
+  },
+  {
+    "id": 2,
+    "name": "AVM Immunity Plus",
+    "category": "nutrition",
+    "categoryName": "Dinh dưỡng",
+    "animal": [
+      "dog",
+      "cat"
+    ],
+    "animalName": "Chó, mèo",
+    "price": 220000,
+    "status": "in-stock",
+    "statusName": "Còn hàng",
+    "description": "Bổ sung vitamin và khoáng chất, hỗ trợ sức đề kháng.",
+    "symbol": "IP",
+    "accent": "yellow"
+  },
+  {
+    "id": 3,
+    "name": "AVM Skin Care",
+    "category": "medicine",
+    "categoryName": "Thuốc thú y",
+    "animal": [
+      "dog",
+      "cat"
+    ],
+    "animalName": "Chó, mèo",
+    "price": 165000,
+    "status": "in-stock",
+    "statusName": "Còn hàng",
+    "description": "Hỗ trợ chăm sóc da và lông.",
+    "symbol": "SC",
+    "accent": "green"
+  },
+  {
+    "id": 4,
+    "name": "AVM Liver Support",
+    "category": "nutrition",
+    "categoryName": "Dinh dưỡng",
+    "animal": [
+      "dog",
+      "cat",
+      "pig",
+      "poultry"
+    ],
+    "animalName": "Chó, mèo, heo, gia cầm",
+    "price": 245000,
+    "status": "in-stock",
+    "statusName": "Còn hàng",
+    "description": "Hỗ trợ chức năng gan và phục hồi thể trạng.",
+    "symbol": "LS",
+    "accent": "blue"
+  },
+  {
+    "id": 5,
+    "name": "AVM Electro Balance",
+    "category": "nutrition",
+    "categoryName": "Dinh dưỡng",
+    "animal": [
+      "poultry",
+      "pig"
+    ],
+    "animalName": "Gia cầm, heo",
+    "price": 195000,
+    "status": "in-stock",
+    "statusName": "Còn hàng",
+    "description": "Bổ sung điện giải và vitamin.",
+    "symbol": "EB",
+    "accent": "yellow"
+  },
+  {
+    "id": 6,
+    "name": "AVM Water Clean",
+    "category": "environment",
+    "categoryName": "Môi trường",
+    "animal": [
+      "poultry",
+      "pig",
+      "aquaculture"
+    ],
+    "animalName": "Gia cầm, heo, thủy sản",
+    "price": 280000,
+    "status": "in-stock",
+    "statusName": "Còn hàng",
+    "description": "Hỗ trợ xử lý nước và môi trường chăn nuôi.",
+    "symbol": "WC",
+    "accent": "green"
+  },
+  {
+    "id": 7,
+    "name": "AVM Respiratory Care",
+    "category": "medicine",
+    "categoryName": "Thuốc thú y",
+    "animal": [
+      "poultry",
+      "pig"
+    ],
+    "animalName": "Gia cầm, heo",
+    "price": 315000,
+    "status": "in-stock",
+    "statusName": "Còn hàng",
+    "description": "Hỗ trợ chăm sóc đường hô hấp.",
+    "symbol": "RC",
+    "accent": "blue"
+  },
+  {
+    "id": 8,
+    "name": "AVM Growth Max",
+    "category": "nutrition",
+    "categoryName": "Dinh dưỡng",
+    "animal": [
+      "poultry",
+      "pig",
+      "aquaculture"
+    ],
+    "animalName": "Gia cầm, heo, thủy sản",
+    "price": 260000,
+    "status": "in-stock",
+    "statusName": "Còn hàng",
+    "description": "Hỗ trợ tăng trưởng và hiệu quả sử dụng thức ăn.",
+    "symbol": "GM",
+    "accent": "yellow"
+  },
+  {
+    "id": 9,
+    "name": "AVM Aqua Mineral",
+    "category": "nutrition",
+    "categoryName": "Dinh dưỡng",
+    "animal": [
+      "aquaculture"
+    ],
+    "animalName": "Thủy sản",
+    "price": 340000,
+    "status": "in-stock",
+    "statusName": "Còn hàng",
+    "description": "Bổ sung khoáng chất thiết yếu cho thủy sản.",
+    "symbol": "AM",
+    "accent": "green"
+  },
+  {
+    "id": 10,
+    "name": "AVM Bio Environment",
+    "category": "environment",
+    "categoryName": "Môi trường",
+    "animal": [
+      "aquaculture",
+      "pig",
+      "poultry"
+    ],
+    "animalName": "Thủy sản, heo, gia cầm",
+    "price": 295000,
+    "status": "out-of-stock",
+    "statusName": "Tạm hết hàng",
+    "description": "Hỗ trợ phân hủy chất hữu cơ.",
+    "symbol": "BE",
+    "accent": "blue"
+  },
+  {
+    "id": 11,
+    "name": "AVM Pet Shampoo",
+    "category": "accessory",
+    "categoryName": "Phụ kiện",
+    "animal": [
+      "dog",
+      "cat"
+    ],
+    "animalName": "Chó, mèo",
+    "price": 145000,
+    "status": "in-stock",
+    "statusName": "Còn hàng",
+    "description": "Làm sạch nhẹ nhàng cho da và lông thú cưng.",
+    "symbol": "PS",
+    "accent": "yellow"
+  },
+  {
+    "id": 12,
+    "name": "AVM Calcium D3",
+    "category": "nutrition",
+    "categoryName": "Dinh dưỡng",
+    "animal": [
+      "dog",
+      "cat",
+      "poultry",
+      "pig"
+    ],
+    "animalName": "Chó, mèo, gia cầm, heo",
+    "price": 210000,
+    "status": "in-stock",
+    "statusName": "Còn hàng",
+    "description": "Bổ sung canxi và vitamin D3.",
+    "symbol": "CD",
+    "accent": "green"
+  },
+  {
+    "id": 13,
+    "name": "AVM Joint Support",
+    "category": "nutrition",
+    "categoryName": "Dinh dưỡng",
+    "animal": [
+      "dog",
+      "cat"
+    ],
+    "animalName": "Chó, mèo",
+    "price": 275000,
+    "status": "in-stock",
+    "statusName": "Còn hàng",
+    "description": "Hỗ trợ sụn khớp và vận động.",
+    "symbol": "JS",
+    "accent": "blue"
+  },
+  {
+    "id": 14,
+    "name": "AVM Fly Control",
+    "category": "environment",
+    "categoryName": "Môi trường",
+    "animal": [
+      "pig",
+      "poultry"
+    ],
+    "animalName": "Heo, gia cầm",
+    "price": 235000,
+    "status": "in-stock",
+    "statusName": "Còn hàng",
+    "description": "Hỗ trợ kiểm soát ruồi và côn trùng.",
+    "symbol": "FC",
+    "accent": "yellow"
+  },
+  {
+    "id": 15,
+    "name": "AVM Oral Care",
+    "category": "medicine",
+    "categoryName": "Thuốc thú y",
+    "animal": [
+      "dog",
+      "cat"
+    ],
+    "animalName": "Chó, mèo",
+    "price": 175000,
+    "status": "out-of-stock",
+    "statusName": "Tạm hết hàng",
+    "description": "Hỗ trợ vệ sinh răng miệng.",
+    "symbol": "OC",
+    "accent": "green"
+  }
+]
