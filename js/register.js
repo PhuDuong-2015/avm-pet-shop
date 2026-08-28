@@ -38,7 +38,7 @@ const registerForm =
     document.querySelector("#registerForm");
 
 const fullNameInput =
-    document.querySelector("#fullName");
+    document.querySelector("#registerFullName");
 
 const emailInput =
     document.querySelector("#registerEmail");
@@ -47,10 +47,10 @@ const passwordInput =
     document.querySelector("#registerPassword");
 
 const confirmPasswordInput =
-    document.querySelector("#confirmPassword");
+    document.querySelector("#registerConfirmPassword");
 
 const acceptTermsInput =
-    document.querySelector("#acceptTerms");
+    document.querySelector("#registerTerms");
 
 const registerButton =
     document.querySelector("#registerButton");
@@ -64,8 +64,11 @@ const registerLoader =
 const registerMessage =
     document.querySelector("#registerMessage");
 
-const passwordToggleButtons =
-    document.querySelectorAll(".password-toggle");
+const passwordToggle =
+    document.querySelector("#registerPasswordToggle");
+
+const confirmPasswordToggle =
+    document.querySelector("#registerConfirmPasswordToggle");
 
 
 /* =========================================================
@@ -73,20 +76,32 @@ const passwordToggleButtons =
 ========================================================= */
 
 const errorElements = {
+
     fullName:
-        document.querySelector("#fullNameError"),
+        document.querySelector(
+            "#registerFullNameError"
+        ),
 
     email:
-        document.querySelector("#emailError"),
+        document.querySelector(
+            "#registerEmailError"
+        ),
 
     password:
-        document.querySelector("#passwordError"),
+        document.querySelector(
+            "#registerPasswordError"
+        ),
 
     confirmPassword:
-        document.querySelector("#confirmPasswordError"),
+        document.querySelector(
+            "#registerConfirmPasswordError"
+        ),
 
     terms:
-        document.querySelector("#termsError")
+        document.querySelector(
+            "#registerTermsError"
+        )
+
 };
 
 
@@ -95,16 +110,25 @@ const errorElements = {
 ========================================================= */
 
 function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        .test(email);
+
 }
 
 
 function clearErrors() {
-    Object.values(errorElements).forEach((element) => {
-        if (element) {
-            element.textContent = "";
-        }
-    });
+
+    Object
+        .values(errorElements)
+        .forEach((element) => {
+
+            if (element) {
+                element.textContent = "";
+            }
+
+        });
+
 
     [
         fullNameInput,
@@ -112,96 +136,164 @@ function clearErrors() {
         passwordInput,
         confirmPasswordInput
     ].forEach((input) => {
-        input?.classList.remove("input-error");
+
+        input?.classList.remove(
+            "input-error"
+        );
+
     });
+
 }
 
 
-function showFieldError(field, message) {
-    const errorElement = errorElements[field];
+function showFieldError(
+    field,
+    message
+) {
+
+    const errorElement =
+        errorElements[field];
+
 
     if (errorElement) {
-        errorElement.textContent = message;
+
+        errorElement.textContent =
+            message;
+
     }
 
+
     const inputMap = {
-        fullName: fullNameInput,
-        email: emailInput,
-        password: passwordInput,
-        confirmPassword: confirmPasswordInput
+
+        fullName:
+            fullNameInput,
+
+        email:
+            emailInput,
+
+        password:
+            passwordInput,
+
+        confirmPassword:
+            confirmPasswordInput
+
     };
 
-    inputMap[field]?.classList.add("input-error");
+
+    inputMap[field]
+        ?.classList.add(
+            "input-error"
+        );
+
 }
 
 
 function validateRegisterForm() {
+
     clearErrors();
 
+
     const fullName =
-        fullNameInput.value.trim();
+        fullNameInput
+            ?.value
+            .trim() || "";
 
     const email =
-        emailInput.value.trim();
+        emailInput
+            ?.value
+            .trim() || "";
 
     const password =
-        passwordInput.value;
+        passwordInput
+            ?.value || "";
 
     const confirmPassword =
-        confirmPasswordInput.value;
+        confirmPasswordInput
+            ?.value || "";
+
 
     let isValid = true;
 
 
-    if (fullName.length < 2) {
+    if (
+        fullName.length < 2
+    ) {
+
         showFieldError(
             "fullName",
             "Vui lòng nhập họ tên hợp lệ."
         );
 
         isValid = false;
+
     }
 
 
-    if (!isValidEmail(email)) {
+    if (
+        !isValidEmail(email)
+    ) {
+
         showFieldError(
             "email",
             "Email không đúng định dạng."
         );
 
         isValid = false;
+
     }
 
 
-    if (password.length < 6) {
+    if (
+        password.length < 6
+    ) {
+
         showFieldError(
             "password",
             "Mật khẩu phải có ít nhất 6 ký tự."
         );
 
         isValid = false;
+
     }
 
 
-    if (confirmPassword !== password) {
+    if (
+        confirmPassword !==
+        password
+    ) {
+
         showFieldError(
             "confirmPassword",
             "Mật khẩu xác nhận không khớp."
         );
 
         isValid = false;
+
     }
 
 
-    if (!acceptTermsInput.checked) {
-        errorElements.terms.textContent =
-            "Bạn cần đồng ý với điều khoản sử dụng.";
+    if (
+        !acceptTermsInput?.checked
+    ) {
+
+        if (
+            errorElements.terms
+        ) {
+
+            errorElements
+                .terms
+                .textContent =
+                "Bạn cần đồng ý với điều khoản sử dụng.";
+
+        }
 
         isValid = false;
+
     }
 
 
     return isValid;
+
 }
 
 
@@ -209,8 +301,21 @@ function validateRegisterForm() {
    MESSAGE
 ========================================================= */
 
-function showMessage(type, message) {
-    registerMessage.textContent = message;
+function showMessage(
+    type,
+    message
+) {
+
+    if (
+        !registerMessage
+    ) {
+        return;
+    }
+
+
+    registerMessage.textContent =
+        message;
+
 
     registerMessage.classList.remove(
         "hidden",
@@ -218,16 +323,23 @@ function showMessage(type, message) {
         "auth-message-error"
     );
 
+
     registerMessage.classList.add(
         type === "success"
             ? "auth-message-success"
             : "auth-message-error"
     );
+
 }
 
 
 function hideMessage() {
-    registerMessage.classList.add("hidden");
+
+    registerMessage
+        ?.classList.add(
+            "hidden"
+        );
+
 }
 
 
@@ -235,27 +347,51 @@ function hideMessage() {
    LOADING
 ========================================================= */
 
-function setLoading(isLoading) {
-    registerButton.disabled = isLoading;
+function setLoading(
+    isLoading
+) {
 
-    registerButtonText.textContent =
-        isLoading
-            ? "Đang tạo tài khoản..."
-            : "Tạo tài khoản";
+    if (
+        registerButton
+    ) {
 
-    registerLoader.classList.toggle(
-        "hidden",
-        !isLoading
-    );
+        registerButton.disabled =
+            isLoading;
+
+    }
+
+
+    if (
+        registerButtonText
+    ) {
+
+        registerButtonText.textContent =
+            isLoading
+                ? "Đang tạo tài khoản..."
+                : "Tạo tài khoản";
+
+    }
+
+
+    registerLoader
+        ?.classList.toggle(
+            "hidden",
+            !isLoading
+        );
+
 }
 
 
 /* =========================================================
-   FIREBASE ERROR
+   FIREBASE ERROR MESSAGE
 ========================================================= */
 
-function getFirebaseErrorMessage(errorCode) {
+function getFirebaseErrorMessage(
+    errorCode
+) {
+
     const errorMessages = {
+
         "auth/email-already-in-use":
             "Email này đã được đăng ký.",
 
@@ -273,43 +409,62 @@ function getFirebaseErrorMessage(errorCode) {
 
         "auth/too-many-requests":
             "Bạn thao tác quá nhiều lần. Hãy thử lại sau."
+
     };
 
-    return errorMessages[errorCode] ||
-        "Không thể tạo tài khoản. Vui lòng thử lại.";
+
+    return (
+        errorMessages[errorCode] ||
+        "Không thể tạo tài khoản. Vui lòng thử lại."
+    );
+
 }
 
 
 /* =========================================================
-   REGISTER
+   REGISTER USER
 ========================================================= */
 
-async function registerUser(event) {
+async function registerUser(
+    event
+) {
+
     event.preventDefault();
 
     hideMessage();
 
-    if (!validateRegisterForm()) {
+
+    if (
+        !validateRegisterForm()
+    ) {
         return;
     }
+
 
     setLoading(true);
 
 
     const fullName =
-        fullNameInput.value.trim();
+        fullNameInput
+            .value
+            .trim();
 
     const email =
-        emailInput.value.trim().toLowerCase();
+        emailInput
+            .value
+            .trim()
+            .toLowerCase();
 
     const password =
-        passwordInput.value;
+        passwordInput
+            .value;
 
 
     try {
-        /*
-            1. Tạo tài khoản Authentication
-        */
+
+        /* =================================================
+           1. CREATE FIREBASE AUTH ACCOUNT
+        ================================================= */
 
         const userCredential =
             await createUserWithEmailAndPassword(
@@ -323,141 +478,320 @@ async function registerUser(event) {
             userCredential.user;
 
 
-        /*
-            2. Cập nhật tên hiển thị Firebase Auth
-        */
+        /* =================================================
+           2. UPDATE DISPLAY NAME
+        ================================================= */
 
-        await updateProfile(user, {
-            displayName: fullName
-        });
-
-
-        /*
-            3. Lưu hồ sơ vào Firestore
-        */
-
-        await setDoc(
-            doc(db, "users", user.uid),
+        await updateProfile(
+            user,
             {
-                uid: user.uid,
-                fullName,
-                email,
-                role: "user",
-                status: "active",
-                createdAt: serverTimestamp(),
-                updatedAt: serverTimestamp()
+                displayName:
+                    fullName
             }
         );
 
 
-        /*
-            4. Lưu thông tin cơ bản ở localStorage
-        */
+        /* =================================================
+           3. CREATE USER DOCUMENT IN FIRESTORE
+        ================================================= */
 
-/*
-    Không giữ trạng thái đăng nhập sau đăng ký.
-    Người dùng phải đăng nhập lại.
-*/
+        await setDoc(
+            doc(
+                db,
+                "users",
+                user.uid
+            ),
+            {
 
-await signOut(auth);
+                uid:
+                    user.uid,
+
+                fullName:
+                    fullName,
+
+                email:
+                    email,
+
+                role:
+                    "user",
+
+                status:
+                    "active",
+
+                createdAt:
+                    serverTimestamp(),
+
+                updatedAt:
+                    serverTimestamp()
+
+            }
+        );
 
 
-localStorage.removeItem(
-    "avmCurrentUser"
-);
+        /* =================================================
+           4. SIGN OUT AFTER REGISTER
+        ================================================= */
+
+        await signOut(auth);
 
 
-showMessage(
-    "success",
-    "Tạo tài khoản thành công! Đang chuyển đến trang đăng nhập..."
-);
+        localStorage.removeItem(
+            "avmCurrentUser"
+        );
 
 
-registerForm.reset();
+        /* =================================================
+           5. SUCCESS
+        ================================================= */
+
+        showMessage(
+            "success",
+            "Tạo tài khoản thành công! Đang chuyển đến trang đăng nhập..."
+        );
 
 
-window.setTimeout(() => {
-    window.location.replace(
-        "./login.html"
-    );
-}, 1300);
+        registerForm.reset();
+
+
+        window.setTimeout(
+            () => {
+
+                window.location.replace(
+                    "./login.html"
+                );
+
+            },
+            1300
+        );
+
 
     } catch (error) {
+
         console.error(
             "Firebase registration error:",
             error
         );
 
+
         showMessage(
             "error",
-            getFirebaseErrorMessage(error.code)
+            getFirebaseErrorMessage(
+                error.code
+            )
         );
 
+
     } finally {
+
         setLoading(false);
+
     }
+
 }
 
 
 /* =========================================================
-   SHOW/HIDE PASSWORD
+   SHOW / HIDE MAIN PASSWORD
 ========================================================= */
 
-passwordToggleButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        const targetId =
-            button.dataset.target;
+passwordToggle
+    ?.addEventListener(
+        "click",
+        () => {
 
-        const targetInput =
-            document.querySelector(`#${targetId}`);
+            const isPassword =
+                passwordInput.type ===
+                "password";
 
-        if (!targetInput) {
-            return;
+
+            passwordInput.type =
+                isPassword
+                    ? "text"
+                    : "password";
+
+
+            passwordToggle.textContent =
+                isPassword
+                    ? "Ẩn"
+                    : "Hiện";
+
         }
+    );
 
-        const isPassword =
-            targetInput.type === "password";
 
-        targetInput.type =
-            isPassword
-                ? "text"
-                : "password";
+/* =========================================================
+   SHOW / HIDE CONFIRM PASSWORD
+========================================================= */
 
-        button.textContent =
-            isPassword
-                ? "Ẩn"
-                : "Hiện";
-    });
-});
+confirmPasswordToggle
+    ?.addEventListener(
+        "click",
+        () => {
+
+            const isPassword =
+                confirmPasswordInput.type ===
+                "password";
+
+
+            confirmPasswordInput.type =
+                isPassword
+                    ? "text"
+                    : "password";
+
+
+            confirmPasswordToggle.textContent =
+                isPassword
+                    ? "Ẩn"
+                    : "Hiện";
+
+        }
+    );
 
 
 /* =========================================================
    CLEAR ERROR WHEN TYPING
 ========================================================= */
 
-[
-    fullNameInput,
-    emailInput,
-    passwordInput,
-    confirmPasswordInput
-].forEach((input) => {
-    input?.addEventListener("input", () => {
-        input.classList.remove("input-error");
-        hideMessage();
-    });
-});
+fullNameInput
+    ?.addEventListener(
+        "input",
+        () => {
+
+            fullNameInput
+                .classList
+                .remove(
+                    "input-error"
+                );
+
+            if (
+                errorElements.fullName
+            ) {
+
+                errorElements
+                    .fullName
+                    .textContent =
+                    "";
+
+            }
+
+            hideMessage();
+
+        }
+    );
 
 
-acceptTermsInput?.addEventListener("change", () => {
-    errorElements.terms.textContent = "";
-});
+emailInput
+    ?.addEventListener(
+        "input",
+        () => {
+
+            emailInput
+                .classList
+                .remove(
+                    "input-error"
+                );
+
+            if (
+                errorElements.email
+            ) {
+
+                errorElements
+                    .email
+                    .textContent =
+                    "";
+
+            }
+
+            hideMessage();
+
+        }
+    );
+
+
+passwordInput
+    ?.addEventListener(
+        "input",
+        () => {
+
+            passwordInput
+                .classList
+                .remove(
+                    "input-error"
+                );
+
+            if (
+                errorElements.password
+            ) {
+
+                errorElements
+                    .password
+                    .textContent =
+                    "";
+
+            }
+
+            hideMessage();
+
+        }
+    );
+
+
+confirmPasswordInput
+    ?.addEventListener(
+        "input",
+        () => {
+
+            confirmPasswordInput
+                .classList
+                .remove(
+                    "input-error"
+                );
+
+            if (
+                errorElements.confirmPassword
+            ) {
+
+                errorElements
+                    .confirmPassword
+                    .textContent =
+                    "";
+
+            }
+
+            hideMessage();
+
+        }
+    );
+
+
+acceptTermsInput
+    ?.addEventListener(
+        "change",
+        () => {
+
+            if (
+                errorElements.terms
+            ) {
+
+                errorElements
+                    .terms
+                    .textContent =
+                    "";
+
+            }
+
+            hideMessage();
+
+        }
+    );
 
 
 /* =========================================================
    SUBMIT
 ========================================================= */
 
-registerForm?.addEventListener(
-    "submit",
-    registerUser
-);
+registerForm
+    ?.addEventListener(
+        "submit",
+        registerUser
+    );
