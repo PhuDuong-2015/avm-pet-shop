@@ -231,9 +231,12 @@ ul {
 ========================================================= */
 
 .header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     z-index: 1000;
+
+    width: 100%;
 
     min-height: var(--header-height);
 
@@ -10849,6 +10852,81 @@ button {
 
     .product-card-image {
         max-height: 170px;
+    }
+
+}
+/* =========================================================
+   FIXED HEADER - MOBILE RESPONSIVE FIX
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    body {
+        padding-top: var(--header-height);
+    }
+
+    .header-container {
+        min-height: var(--header-height);
+        gap: 15px;
+    }
+
+    .menu-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar {
+        position: fixed;
+
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        max-height: calc(100vh - var(--header-height));
+
+        padding: 18px 20px;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+
+        overflow-y: auto;
+
+        background: rgba(2, 8, 23, 0.98);
+
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .nav-link {
+        width: 100%;
+
+        padding: 14px 10px;
+
+        text-align: center;
+    }
+
+    .nav-link::after {
+        bottom: 5px;
     }
 
 }

@@ -55,7 +55,7 @@
 
     <link
         rel="stylesheet"
-        href="./css/style.css"
+        href="../css/style.css"
     >
 
 
@@ -65,7 +65,7 @@
 
     <script
         type="module"
-        src="./js/auth-guard.js"
+        src="../js/auth-guard.js"
     ></script>
 </head>
 
@@ -86,7 +86,7 @@
             <!-- LOGO -->
 
             <a
-                href="./index.html"
+                href="../index.html"
                 class="logo"
                 aria-label="AVM Pet Shop"
             >
@@ -121,7 +121,7 @@
     id="navbar"
     aria-label="Điều hướng chính"
 >
-<a href="./index.html" class="nav-link">
+<a href="../index.html" class="nav-link">
     Trang chủ
 </a>
 
@@ -823,7 +823,7 @@
             <div class="footer-brand">
 
                 <a
-                    href="./index.html"
+                    href="../index.html"
                     class="logo"
                 >
                     <span class="logo-avm">
@@ -853,7 +853,7 @@
                 </h3>
 
 
-                <a href="./index.html">
+                <a href="../index.html">
                     Trang chủ
                 </a>
 
@@ -1088,20 +1088,17 @@
          JAVASCRIPT
     ====================================================== -->
 
-    <script src="./js/main.js"></script>
+<script src="../js/main.js"></script>
 
+<script
+    type="module"
+    src="../js/products.js"
+></script>
 
-    <!-- XỬ LÝ SẢN PHẨM -->
-
-<script type="module" src="./js/products.js"></script>
-
-
-    <!-- PHIÊN ĐĂNG NHẬP VÀ QUYỀN ADMIN -->
-
-    <script
-        type="module"
-        src="./js/user-session.js"
-    ></script>
+<script
+    type="module"
+    src="../js/user-session.js"
+></script>
 <script>
 (function(){
     if(!window.chatbase || window.chatbase("getState") !== "initialized"){

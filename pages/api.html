@@ -55,7 +55,7 @@
 
     <link
         rel="stylesheet"
-        href="./css/style.css"
+        href="../css/style.css"
     >
 
 
@@ -65,7 +65,7 @@
 
     <script
         type="module"
-        src="./js/auth-guard.js"
+        src="../js/auth-guard.js"
     ></script>
 </head>
 
@@ -86,7 +86,7 @@
             <!-- LOGO -->
 
             <a
-                href="./index.html"
+                href="../index.html"
                 class="logo"
                 aria-label="AVM Pet Shop"
             >
@@ -492,7 +492,7 @@
                                 <input
                                     type="text"
                                     id="apiEndpoint"
-                                    value="./data/products.json"
+                                    value="../data/products.json"
                                     readonly
                                 >
 
@@ -683,7 +683,7 @@
                             aria-live="polite"
                         ><code>{
     "message": "Nhấn Gửi yêu cầu để tải dữ liệu",
-    "endpoint": "./data/products.json"
+    "endpoint": "../data/products.json"
 }</code></pre>
 
 
@@ -1033,20 +1033,13 @@
          JAVASCRIPT
     ====================================================== -->
 
-    <script src="./js/main.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/api.js"></script>
 
-
-    <!-- CHỈ GỌI API.JS TẠI TRANG NÀY -->
-
-    <script src="./js/api.js"></script>
-
-
-    <!-- PHIÊN ĐĂNG NHẬP VÀ QUYỀN ADMIN -->
-
-    <script
-        type="module"
-        src="./js/user-session.js"
-    ></script>
+<script
+    type="module"
+    src="../js/user-session.js"
+></script>
 <script>
 (function(){
     if(!window.chatbase || window.chatbase("getState") !== "initialized"){

@@ -534,11 +534,14 @@ function normalizeProduct(
             từ field image trong Firestore.
         */
 
-        image:
-            normalizeString(
-                data.image ||
-                data.imageUrl
-            ),
+            image:
+    normalizeString(
+        data.image ||
+        data.imageUrl
+    ).replace(
+        "./images/",
+        "../images/"
+    ),
 
         createdAt:
             data.createdAt ??
